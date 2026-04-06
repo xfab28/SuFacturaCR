@@ -29,5 +29,5 @@ btnInicio.addEventListener("click", (e) => {
 });
 
 direccionamiento.addEventListener("click", () => {
-    window.location.href = "../HTML/registro.html";
+    window.location.href = "../registro.html";
 });

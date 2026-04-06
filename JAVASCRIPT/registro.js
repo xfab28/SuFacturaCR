@@ -71,12 +71,12 @@ btnRegistro.addEventListener("click", (e) => {
         mensajeAlerta.innerHTML = "Registro realizado correctamente";
 
         setTimeout(() => {
-            window.location.href = "../HTML/carga.html";
+            window.location.href = "HTML/carga.html";
         }, 2000);
     }
 });
 
 //Ir a pagina de inicio de sesion
 direccionamiento.addEventListener("click", () => {
-    window.location.href = "../HTML/inicio-de-sesion.html";
+    window.location.href = "HTML/inicio-de-sesion.html";
 });
