@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpeg" href="../IMAGENES/icon.jpeg">
+    <link rel="stylesheet" href="../CSS/inicio-de-sesion.css">
+    <title>Inicio de sesión</title>
+</head>
+<body>
+    <!--Formulario-->
+    <div class="inicio-de-sesion">
+
+        <img src="../IMAGENES/SuFácturaCR.png" alt="logo">
+
+        <h2>Inicio de sesión</h2>
+
+        <form>
+            <input type="text" name="cedula" class="input-form numero-cedula" placeholder="Número de cédula" required>
+            <input type="password" name="contrasena" class="input-form contrasena-inicio" placeholder="Contraseña" required>
+            <div class="mensaje-alerta"></div>
+            <input type="submit" name="boton" class="btn-inicio" value="Iniciar sesión">
+        </form>
+
+        <div class="direccion-registro">
+            <p>¿No tienes una cuenta?</p>
+            <p class="direccionamiento">Registrarse</p>
+        </div>
+        
+    </div>
+
+    <!--Scripts-->
+    <script src="../JAVASCRIPT/inicio-de-sesion.js"></script>
+</body>
+</html>

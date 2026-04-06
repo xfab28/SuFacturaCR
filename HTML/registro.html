@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/registro.css">
+    <link rel="icon" type="image/jpeg" href="../IMAGENES/icon.jpeg">
+    <title>Registro</title>
+</head>
+<body>
+    <!--Formulario-->
+    <div class="registro">
+
+        <img src="../IMAGENES/SuFácturaCR.png" alt="logo" class="logo">
+
+        <h2>Registro</h2>
+
+        <form>
+            <input type="text" name="nombre" class="input-form nombre" placeholder="Nombre" required>
+            <input type="text" name="apellidos" class="input-form apellidos" placeholder="Apellidos" required>
+            <input type="text" name="identificacion" class="input-form cedula" placeholder="Cédula" required>
+            <input type="email" name="correo" class="input-form correo" placeholder="Correo eléctronico" required>
+            <input type="password" name="contrasena" class="input-form contrasena" placeholder="Contraseña" required>
+            <div class="mensaje-alerta"></div>
+            <input type="submit" name="boton" class="btn-registro" value="Registrarse">
+        </form>
+
+        <div class="direccion-inicio">
+            <p>¿Ya tienes una cuenta?</p>
+            <p class="direccionamiento">Iniciar sesión</p>
+        </div>
+        
+    </div>
+
+    <!--Scripts-->
+    <script src="../JAVASCRIPT/registro.js"></script>
+</body>
+</html>

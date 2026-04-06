@@ -1,0 +1,435 @@
+/*body*/
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+/*Header*/
+header {
+    border: 1px solid #bebcbc;
+    display: flex;
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    background-color: white;
+    margin: 0;
+    top: 0;
+}
+
+header img {
+    margin: 0;
+    width: 350px;
+    height: 50px;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.contenido {
+    margin-top: 95px;
+}
+
+.usuario {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 3rem;
+}
+
+#nombre-usuario {
+    font-size: 18px;
+}
+
+/*Contenido*/
+
+.titulo-ventas {
+    margin: 10px;
+    border: 2px solid #234fdd;
+    width: 191.5vh;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.ventanas {
+    display: flex;
+    border: 2px solid #234fdd;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.ventas {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.datos-factura {
+    display: flex;
+    flex-direction: column;
+    width: 60vh;
+    border: 2px solid #234fdd;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.datos-factura h3 {
+    font-size: 25px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.cliente {
+    width: 45vh;
+    padding: 15px;
+    outline: none;
+    border: 2px solid #234fdd;
+    margin: 10px;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.articulos {
+    display: flex;
+    flex-direction: column;
+    width: 60vh;
+    border: 2px solid #234fdd;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 2vh;
+}
+
+.articulos h3 {
+    font-size: 25px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.codigo {
+    width: 40vh;
+    padding: 15px;
+    outline: none;
+    border: 2px solid #234fdd;
+    margin: 10px;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.articulo {
+    width: 50vh;
+    padding: 15px;
+    outline: none;
+    border: 2px solid #234fdd;
+    margin: 10px;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.cantidad {
+    width: 30vh;
+    padding: 15px;
+    outline: none;
+    border: 2px solid #234fdd;
+    margin: 10px;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.precio {
+    width: 25vh;
+    padding: 15px;
+    outline: none;
+    border: 2px solid #234fdd;
+    margin: 10px;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.descuento-exento {
+    display: flex;
+    gap: 8px;
+}
+
+.descuento {
+    width: 30vh;
+    padding: 15px;
+    outline: none;
+    border: 2px solid #234fdd;
+    margin: 10px;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.exento {
+    width: 30vh;
+    padding: 15px;
+    outline: none;
+    border: 2px solid #234fdd;
+    margin: 10px;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.agregar-limpiar {
+    display: flex;
+    margin-left: 40vh;
+    gap: 30px;
+    margin-top: 3vh;
+}
+
+.btn-agregar {
+    border: none;
+    background-color: #234fdd;
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    width: 10vh;
+}
+
+.btn-limpiar {
+    border: none;
+    background-color: #234fdd;
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    width: 10vh; 
+}
+
+.mensaje-aclaratorio {
+    color: #bebcbc;
+}
+
+.lista-ventas {
+    border: 2px solid #234fdd;
+    margin: 10px;
+    border-radius: 5px;
+    width: 180vh;
+    height: 65vh;
+    overflow-y: auto;
+}
+
+.lista-ventas h3{
+    font-size: 25px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.descripcion {
+    display: flex;
+    gap: 5vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.productos {
+    display: flex;
+    overflow-y: auto;
+    border: 1px solid #bebcbc;
+    margin: 10px;
+    height: 50vh;
+}
+
+.div-info {
+    display: flex;
+    flex-direction: column;
+    width: 16.7vh;
+    padding: 5px;
+    align-items: center;
+}
+
+.titulo-div {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.titulo-div h4{
+    border-bottom: 1px solid #bebcbc;
+    margin-bottom: 2px;
+}
+
+.tipoImp {
+    display: flex;
+    flex-direction: column;
+    width: 2vh;
+    padding: 5px;
+    align-items: center;
+    margin-left: 2vh;
+}
+
+
+.opciones {
+    display: flex;
+    margin: 10px;
+    border: 2px solid #234fdd;
+    border-radius: 5px;
+    padding: 15px;
+    height: 15vh;
+    align-items: center;
+    gap: 160vh;
+}
+
+.input-opciones {
+    border: none;
+    background-color: #234fdd;
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.opciones-finales {
+    display: flex;
+    gap: 20px;
+}
+
+.calculos {
+    display: flex;
+    flex-direction: column;
+}
+
+.subtotal {
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.cant-subtotal-ventas {
+    width: 15vh;
+    padding: 15px;
+    border: 2px solid #234fdd;
+    border-radius: 5px;
+    font-size: 20px; 
+    margin-left: 3vh;
+} 
+
+.iva-13 {
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.iva-13-calculos {
+    width: 15vh;
+    padding: 15px;
+    border: 2px solid #234fdd;
+    border-radius: 5px;
+    font-size: 20px; 
+    margin-left: 6vh;
+}
+
+.iva-1 {
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.iva-1-calculos {
+    width: 15vh;
+    padding: 15px;
+    border: 2px solid #234fdd;
+    border-radius: 5px;
+    font-size: 20px; 
+    margin-left: 7vh;
+}
+
+.iva-2 {
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.iva-2-calculos {
+    width: 15vh;
+    padding: 15px;
+    border: 2px solid #234fdd;
+    border-radius: 5px;
+    font-size: 20px; 
+    margin-left: 7vh;
+}
+
+.descuento-calculos {
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.total-descuento {
+    width: 15vh;
+    padding: 15px;
+    border: 2px solid #234fdd;
+    border-radius: 5px;
+    font-size: 20px;  
+    margin-left: 3.5vh; 
+}
+
+.exento-calculos {
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.total-exento {
+    width: 15vh;
+    padding: 15px;
+    border: 2px solid #234fdd;
+    border-radius: 5px;
+    font-size: 20px;   
+    margin-left: 6.8vh;
+}
+
+.total {
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.cant-total-ventas {
+    width: 15vh;
+    padding: 15px;
+    border: 2px solid #234fdd;
+    border-radius: 5px;
+    font-size: 20px;
+    margin-left: 7vh;
+}
+
+.radios {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    border: 2px solid #234fdd;
+    border-radius: 5px;
+    width: 200px;
+    padding: 5px;
+    margin: 10px;
+}
+
+.ivas {
+    display: flex;
+}
+
+.iva {
+    width: 15vh;
+    padding: 15px;
+    border: 2px solid #234fdd;
+    border-radius: 5px;
+    font-size: 20px;
+    margin: 10px;
+    gap: 10px;
+    color: #bebcbc;
+}
+
+.cliente-info {
+    display: flex;
+    margin: 10px;
+    gap: 15px;
+}
+
+.cliente-info h4 {
+    font-size: 25px;
+    margin: 0;
+}
+
+.nombre-cliente {
+    color: #234fdd;
+    padding: 0;
+    margin: 0;
+}

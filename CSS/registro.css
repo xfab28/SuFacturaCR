@@ -1,0 +1,115 @@
+/*Centrar div*/
+body {
+    display: flex;
+    font-family: sans-serif;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/*Formulario*/
+.logo {
+    width: 350px;
+    height: 50px;
+    margin: 0;
+    margin: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.registro {
+    display: flex;
+    flex-direction: column;
+    width: 70vh;
+    height: 55vh;
+    padding: 15px;
+    margin: 15vh;
+    border: 1px solid #D6D6D6;
+    border-radius: 10px;
+}
+
+.registro h2 {
+    text-align: center;
+    font-size: 3vh;
+    margin-bottom: 5vh;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-form {
+    width: 60vh;
+    padding: 15px;
+    margin-left: 3.5vh;
+    margin-bottom: 5px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #666;
+    font-size: 20px;
+}
+
+.input-form:hover {
+    border-bottom: 1px solid #2780F5;
+}
+
+.input-form:focus {
+    border-bottom: 1px solid #2780F5;
+}
+
+.btn-registro {
+    width: 400px;
+    border: none;
+    background-color: #2780F5;
+    border-radius: 5px;
+    font-size: 25px;
+    color: white;
+    padding: 15px;
+    margin-top: 15px;
+    transition: 1s;
+    margin-left: 19vh;
+    outline: none;
+}
+
+.btn-registro:hover {
+    background-color: #1337aa;
+    cursor: pointer;
+}
+
+.btn-registro:active {
+    transform: scale(0.9);
+}
+
+.direccion-inicio {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    margin-top: 7vh;
+}
+
+.direccion-inicio p {
+    font-size: 20px;
+}
+
+.direccionamiento:hover {
+    color: #2780F5;
+    cursor: pointer;
+}
+
+/*Mensaje alerta*/
+.mensaje-alerta-rojo {
+    color: red;
+    font-size: 20px;
+    text-align: center;
+    margin: 10px;
+}
+
+.mensaje-alerta-verde {
+    color: greenyellow;
+    font-size: 20px;
+    text-align: center;
+    margin: 10px;
+}

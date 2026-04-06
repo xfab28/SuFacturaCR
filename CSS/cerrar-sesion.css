@@ -1,0 +1,87 @@
+/*Confirmacion*/
+
+@keyframes aparecerModal {
+    from{
+        opacity: 0;
+        transform: translate(-50%, -60%) scale(0.8);
+    }
+
+    to{
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.confirmar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 35vh;
+    height: 15vh;
+    border: 1px solid #D6D6D6;
+    border-radius: 10px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    animation: aparecerModal 0.3s ease;
+}
+
+.confirmar h3 {
+    font-size: 25px;
+}
+
+.botones {
+    display: flex;
+    gap: 20px;
+}
+
+.aceptar {
+    padding: 15px;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 20px;
+    background-color: #2AD42E;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+.cancelar {
+    padding: 15px;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 20px;
+    background-color: red;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+.aceptar:hover {
+    background-color: #015703;
+}
+
+.cancelar:hover {
+    background-color: #530606;
+}
+
+.aceptar:active {
+    transform: scale(0.9);
+}
+
+.cancelar:active {
+    transform: scaleX(0.9);
+}
+
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5); 
+    display: none; 
+}
