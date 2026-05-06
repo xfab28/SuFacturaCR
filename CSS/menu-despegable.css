@@ -8,9 +8,9 @@
 }
 
 .side-bar {
-    border: 2px solid #bebcbc;
+    border: none;
     width: 0rem;
-    background-color: white;
+    background-color: #242057;
     position: fixed;
     z-index: 1000;
     top: 82px;
@@ -24,7 +24,7 @@
 }
 
 .side-bar ul {
-    margin: 0;
+    margin: 20px;
     padding: 0;
 }
 
@@ -39,15 +39,14 @@
     gap: 3rem;
     font-size: 25px;
     margin-bottom: 20px;
-    color: black;
-    border-radius: 5px;
+    color: #ffffff;
     padding: 10px;
     white-space: nowrap;
     overflow: hidden;
 }
 
 .direcciones:hover {
-    background-color: #666;
+    background-color: #14074e;
 }
 
 .a-display {

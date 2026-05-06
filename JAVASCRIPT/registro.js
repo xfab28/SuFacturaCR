@@ -6,7 +6,6 @@ const correo = document.querySelector(".correo");
 const contrasena = document.querySelector(".contrasena");
 const mensajeAlerta = document.querySelector(".mensaje-alerta");
 const btnRegistro = document.querySelector(".btn-registro");
-const direccionamiento = document.querySelector(".direccionamiento");
 
 //Validaciones
 btnRegistro.addEventListener("click", (e) => {
@@ -74,9 +73,4 @@ btnRegistro.addEventListener("click", (e) => {
             window.location.href = "HTML/carga.html";
         }, 2000);
     }
-});
-
-//Ir a pagina de inicio de sesion
-direccionamiento.addEventListener("click", () => {
-    window.location.href = "HTML/inicio-de-sesion.html";
 });

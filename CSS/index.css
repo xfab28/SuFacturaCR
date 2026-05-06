@@ -1,0 +1,322 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    position: relative;
+}
+
+
+.logo {
+    width: 350px;
+    height: 50px;
+}
+
+/*Div general*/
+.registro-inicio {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20vh;
+    border: 3px solid #D4D4D4;
+    width: 100vh;
+    position: fixed;
+    top: 25%;
+    height: 55vh;
+    border-radius: 3vh;
+    background-color: white;
+}
+
+/*Registro*/
+@keyframes EntrarDerecha {
+    from {
+        transform: translateX(50%);
+    } 
+    to {
+        transform: matrix(0);
+    }
+}
+
+.registro-animacion {
+    animation: EntrarDerecha .8s ease;
+}
+
+.registro {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+
+.registro h3 {
+    font-size: 3vh;
+    
+}
+
+.registro form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-form-registro {
+    padding: 20px;
+    width: 30vh;
+    border: none;
+    font-size: 20px;
+    outline: none;
+    background-color: #F0F0F0;
+    margin: 10px;
+}
+
+.btn-registro {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #284D8F;
+    width: 15vh;
+    border: none;
+    color: white;
+    font-size: 1.5vh;
+    border-radius: 5vh;
+    font-weight: bold;
+}
+
+.registro .ir-registro {
+    display: none;
+}
+
+/*Inicio de sesión*/
+@keyframes EntrarIzquierda {
+    from {
+        transform: translateX(-15%);
+    } 
+    to {
+        transform: matrix(0);
+    }
+}
+
+.inicio-sesion-animacion {
+    animation: EntrarIzquierda .8s ease;
+}
+
+.inicio-sesion {
+    text-align: center;
+}
+
+.inicio-sesion h3{
+    font-size: 3vh;
+}
+
+.inicio-sesion form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-form {
+    padding: 20px;
+    width: 30vh;
+    border: none;
+    font-size: 20px;
+    outline: none;
+    background-color: #F0F0F0;
+    margin: 10px;
+}
+
+.btn-inicio {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #284D8F;
+    width: 15vh;
+    border: none;
+    color: white;
+    font-size: 1.5vh;
+    border-radius: 5vh;
+    font-weight: bold;   
+}
+
+/*Mensajes alerta de registro*/
+.mensaje-alerta {
+    font-size: 1.5vh;
+    font-weight: bold;
+}
+
+.mensaje-alerta-rojo {
+    color: red;
+}
+
+.mensaje-alerta-verde {
+    color: #24C735;
+}
+
+/*Mensajes alertas de inicio de sesión*/
+.mensaje-alerta-inicio {
+    font-size: 1.5vh;
+    font-weight: bold;
+}
+
+.mensaje-alerta-rojo-inicio {
+    color: red;
+}
+
+.mensaje-alerta-verde-inicio {
+    color: #24C735;
+}
+
+/*Pantalla de cambio*/
+@keyframes AparecerIzquierda {
+    from {
+        transform: translateX(-50%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes AparecerDerecha {
+    from {
+        transform: translateX(50%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.ir-registro-animacion {
+    animation: AparecerIzquierda 0.5s ease;
+}
+
+.ir-inicio-animacion {
+    animation: AparecerDerecha 0.5s ease;
+}
+
+.desactivado{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: 3vh;
+    height: 100%;
+    width: 50%;
+    background: #239ccc;
+    background: linear-gradient(90deg,rgba(35, 156, 204, 1) 22%, rgba(31, 112, 184, 1) 32%, rgba(75, 188, 219, 1) 88%);
+}
+
+.desactivado-registro {
+    border-top-right-radius: 10vh;
+    border-bottom-right-radius: 10vh;
+    border-top-left-radius: 3vh;
+    border-bottom-left-radius: 3vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    transition: left 0.5s ease;
+}
+
+.desactivado-registro .ir-inicio {
+    display: none;
+}
+
+.desactivado-registro h2 {
+    font-weight: bold;
+    font-size: 2.5vh;
+    margin: 0;
+}
+
+.desactivado-registro p {
+    font-size: 20px;
+}
+
+.desactivado-registro input {
+    border-radius: 5px;
+    background: none;
+    border: 3px solid white;
+    padding: 13px;
+    width: 20vh;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+}
+
+.desactivado-registro h3{
+    display: none;
+}
+
+.desactivado-registro form{
+    display: none;
+}
+
+.desactivado-registro .ir-registro {
+    display: flex;
+    animation: AparecerIzquierda 0.5s ease;
+}
+
+.ir-registro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.desactivado-inicio {
+    border-top-right-radius: 3vh;
+    border-bottom-right-radius: 3vh;
+    border-top-left-radius: 10vh;
+    border-bottom-left-radius: 10vh;
+    position: absolute;
+    top: 0;
+    left: 50vh;
+    transition: left 0.5s ease;
+}
+
+.desactivado-inicio h2 {
+    font-weight: bold;
+    font-size: 2.5vh;
+    margin: 0;
+}
+
+.desactivado-inicio p {
+    font-size: 20px;
+}
+
+.desactivado-inicio input {
+    border-radius: 5px;
+    background: none;
+    border: 3px solid white;
+    padding: 13px;
+    width: 20vh;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+}
+
+.desactivado-inicio h3{
+    display: none;
+}
+
+.desactivado-inicio form{
+    display: none;
+}
+
+.desactivado-inicio .ir-registro {
+    display: none;
+}
+
+.desactivado-inicio .ir-inicio {
+    display: flex;
+}
+
+.ir-inicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

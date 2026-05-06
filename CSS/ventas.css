@@ -6,7 +6,6 @@ body {
 
 /*Header*/
 header {
-    border: 1px solid #bebcbc;
     display: flex;
     position: fixed;
     z-index: 9999;
@@ -24,8 +23,17 @@ header img {
     cursor: pointer;
 }
 
-.contenido {
-    margin-top: 95px;
+.cabecera {
+    display: flex;
+    font-size: 25px;
+    background-color: #D9D9D9;
+    margin-top: 80px;
+    width: 100%;
+}
+
+.cabecera p {
+    margin-left: 3vh;
+    color: #7D7D7D;
 }
 
 .usuario {

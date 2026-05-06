@@ -21,7 +21,7 @@ cerrarSesion.addEventListener("click", () => {
         confirmar.removeChild(botones);
         h3.innerHTML = "Cerrando...";
         setTimeout(() => {
-            window.location.href = "../HTML/inicio-de-sesion.html";
+            window.location.href = "../index.html";
         }, 3000);
     }
 

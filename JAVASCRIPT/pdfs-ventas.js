@@ -13,9 +13,9 @@ btnTotalizar.addEventListener("click", () => {
     const correo = datosProv.correoLocal;
     const cedula = datosProv.cedulaLocal;
 
-    const headerHeight = 45;
+    const headerHeight = 50;
 
-    doc.setFillColor(0x5b, 0x48, 0xd9);
+    doc.setFillColor(39, 87, 245);
     doc.rect(0, 0, doc.internal.pageSize.getWidth(), headerHeight, "F");
 
     const contentStartY = headerHeight + 10;

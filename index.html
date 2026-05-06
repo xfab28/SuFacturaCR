@@ -3,36 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/registro.css">
+    <link rel="stylesheet" href="CSS/index.css">
     <link rel="icon" type="image/jpeg" href="IMAGENES/icon.jpeg">
     <title>Registro</title>
 </head>
 <body>
     <!--Formulario-->
-    <div class="registro">
-
-        <img src="IMAGENES/SuFácturaCR.png" alt="logo" class="logo">
-
-        <h2>Registro</h2>
-
-        <form>
-            <input type="text" name="nombre" class="input-form nombre" placeholder="Nombre" required>
-            <input type="text" name="apellidos" class="input-form apellidos" placeholder="Apellidos" required>
-            <input type="text" name="identificacion" class="input-form cedula" placeholder="Cédula" required>
-            <input type="email" name="correo" class="input-form correo" placeholder="Correo eléctronico" required>
-            <input type="password" name="contrasena" class="input-form contrasena" placeholder="Contraseña" required>
-            <div class="mensaje-alerta"></div>
-            <input type="submit" name="boton" class="btn-registro" value="Registrarse">
-        </form>
-
-        <div class="direccion-inicio">
-            <p>¿Ya tienes una cuenta?</p>
-            <p class="direccionamiento">Iniciar sesión</p>
+    
+    <img src="IMAGENES/SuFácturaCR.png" alt="logo" class="logo">
+    <div class="registro-inicio">
+        <div class="registro">
+            <h3>Crear cuenta</h3>
+            <form>
+                <input type="text" name="nombre" class="input-form-registro nombre" placeholder="Nombre" required>
+                <input type="text" name="apellidos" class="input-form-registro apellidos" placeholder="Apellidos" required>
+                <input type="text" name="identificacion" class="input-form-registro cedula" placeholder="Cédula" required>
+                <input type="email" name="correo" class="input-form-registro correo" placeholder="Correo eléctronico" required>
+                <input type="password" name="contrasena" class="input-form-registro contrasena" placeholder="Contraseña" required>
+                <div class="mensaje-alerta"></div>
+                <input type="submit" name="boton" class="btn-registro" value="Registrarse">
+            </form>
         </div>
-        
+
+        <div class="desactivado desactivado-registro">
+            <div class="ir-registro">
+                <h2>Bienvenido!</h2>
+                <p>Ingresa tus detalles personales para poder acceder a las funciones del sitio</p>
+                <input type="submit" class="registro-ir" value="Registrarse">
+            </div>
+
+            <div class="ir-inicio">
+                <h2>Hola de nuevo!</h2>
+                <p>Ingresa tus detalles personales para poder acceder a tu cuenta</p>
+                <input type="submit" class="inicio-ir" value="Iniciar Sesión">
+            </div>
+        </div>
+
+        <div class="inicio-sesion">
+            <h3>Iniciar Sesión</h3>
+            <form>
+                <input type="text" name="cedula" class="input-form numero-cedula" placeholder="Número de cédula" required>
+                <input type="password" name="contrasena" class="input-form contrasena-inicio" placeholder="Contraseña" required>
+                <div class="mensaje-alerta-inicio"></div>
+                <input type="submit" name="boton" class="btn-inicio" value="Iniciar sesión">
+            </form>
+        </div>
     </div>
 
     <!--Scripts-->
     <script src="JAVASCRIPT/registro.js"></script>
+    <script src="JAVASCRIPT/inicio-de-sesion.js"></script>
+    <script src="JAVASCRIPT/registro-inicio.js"></script>
 </body>
 </html>
