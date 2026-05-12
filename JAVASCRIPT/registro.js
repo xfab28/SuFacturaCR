@@ -8,7 +8,7 @@ const mensajeAlerta = document.querySelector(".mensaje-alerta");
 const btnRegistro = document.querySelector(".btn-registro");
 
 //Validaciones
-btnRegistro.addEventListener("click", (e) => {
+btnRegistro.addEventListener("click", async (e) => {
     e.preventDefault();
 
     if (nombre.value.length > 40 || nombre.value.length < 5) {
@@ -63,14 +63,51 @@ btnRegistro.addEventListener("click", (e) => {
         let correoLocal = correo.value;
         let contrasenaLocal = contrasena.value;
 
-        localStorage.setItem("usuario", JSON.stringify({nombreLocal, apellidosLocal, cedulaLocal, correoLocal, contrasenaLocal}));
+        localStorage.setItem("usuario", JSON.stringify({
+                nombreLocal, 
+                apellidosLocal, 
+                cedulaLocal, 
+                correoLocal, 
+                contrasenaLocal
+            })
+        );
 
-        mensajeAlerta.classList.add("mensaje-alerta-verde");
-        mensajeAlerta.classList.remove("mensaje-alerta-rojo");
-        mensajeAlerta.innerHTML = "Registro realizado correctamente";
+        try {
+            //Enviar datos al servidor
+            const respuesta = await fetch('/registrar', {
+                method: 'post',
 
-        setTimeout(() => {
-            window.location.href = "HTML/carga.html";
-        }, 2000);
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+
+                body: JSON.stringify({
+                    nombre: nombreLocal,
+                    apellidos: apellidosLocal,
+                    cedula: cedulaLocal,
+                    correo: correoLocal,
+                    contrasena: contrasenaLocal
+                })
+            });
+
+            if (respuesta.ok) {
+                mensajeAlerta.classList.add("mensaje-alerta-verde");
+                mensajeAlerta.classList.remove("mensaje-alerta-rojo");
+                mensajeAlerta.innerHTML = "Registro realizado correctamente";
+
+                setTimeout(() => {
+                    window.location.href = "HTML/carga.html";
+                }, 2000);
+
+            } else {
+                mensajeAlerta.classList.add("mensaje-alerta-rojo");
+                mensajeAlerta.innerHTML = "Error al registrar";
+            }
+            
+        } catch (error) {
+            console.log(error);
+            mensajeAlerta.classList.add("mensaje-alerta-rojo");
+            mensajeAlerta.innerHTML = "Error del servidor";
+        }
     }
 });

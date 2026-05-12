@@ -1,6 +1,26 @@
 {
   "dependencies": {
+    "better-sqlite3": "^12.9.0",
+    "express": "^5.2.1",
     "jspdf": "^4.2.0",
     "vite": "^8.0.0"
-  }
+  },
+  "name": "sufacturacr",
+  "version": "1.0.0",
+  "description": "Este proyecto esta basado en un sistema de facturación con múltiples funciones como el de emitir y guardar facturas en formato pdf.\r También para tener registro de tus ingresos y compras. El proyecto sigue en desarrollo, esto por así decirlo es para que se tenga acceso a un vistazo\r de los avances logrados.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xfab28/SuFacturaCR.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xfab28/SuFacturaCR/issues"
+  },
+  "homepage": "https://github.com/xfab28/SuFacturaCR#readme"
 }
