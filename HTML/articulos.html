@@ -3,16 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/ventas.css">
-    <link rel="icon" type="image/jpeg" href="../IMAGENES/icon.jpeg">
+    <link rel="icon" href="../IMAGENES/icon.jpeg">
+    <link rel="stylesheet" href="../CSS/articulos.css">
     <link rel="stylesheet" href="../CSS/menu-despegable.css">
     <link rel="stylesheet" href="../CSS/cerrar-sesion.css">
-    <title>Ventas</title>
+    <title>Articulos</title>
 </head>
 <body>
-
     <!--Header-->
-
     <header>
         <div class="menu-container" id="menu-container">
             <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
@@ -21,6 +19,7 @@
         </div>
 
         <img src="../IMAGENES/SuFácturaCR.png" alt="logo1" id="logo1">
+
         <div class="usuario">
             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="50" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                 <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
@@ -28,9 +27,10 @@
             </svg>
             <p id="nombre-usuario"></p>
         </div>
+
     </header>
 
-    <!--Barra busqueda-->
+    <!--Contenido-->
 
     <div class="side-bar" id="side-bar">
         <nav>
@@ -92,174 +92,54 @@
         </nav>
     </div>
 
-    <div class="cabecera">
-        <p>Ventas</p>
-    </div>
-
     <!--Contenido-->
 
     <div class="contenido">
-        <h1 class="titulo-ventas">Generación de ventas</h1>
-
-        <div class="ventanas">
-
-            <div class="ventas">
-
-                <div class="datos-factura">
-
-                    <h3>Datos de la factura</h3>
-
-                    <input type="text" placeholder="Cliente" class="cliente">
-                    <input type="number" placeholder="Codigo" class="codigo">
-                    <input type="text" placeholder="Descripción" class="articulo">
-
-                </div>
-
-                <div class="articulos">
-
-                    <h3>Cálculo</h3>
-
-                    <div class="cantidad-precio">
-                        <input type="number" placeholder="Cantidad" class="cantidad">
-                        <input type="number" placeholder="Precio" class="precio">
-                    </div>
-
-                    <div class="descuento-exento">
-                        <input type="number" placeholder="Descuento" class="descuento">
-                        <input type="number" placeholder="Exento" class="exento">
-                    </div>
-
-                    <div class="radios">
-                        <input type="radio" class="iva13">13%
-                        <input type="radio" class="iva1">1%
-                        <input type="radio" class="iva2">2%
-                    </div>
-
-                    <div class="ivas">
-                        <div class="iva imp13">13%</div>
-                        <div class="iva imp1">1%</div>
-                        <div class="iva imp2">2%</div>
-                    </div>
-
-                    <h4 class="mensaje-aclaratorio">(Los datos de "Datos de la Factura" tambien se agregan)</h4>
-                    
-                </div>
-
-                <div class="agregar-limpiar">
-                    <input type="submit" value="Agregar" class="btn-agregar">
-                    <input type="submit" value="Limpiar" class="btn-limpiar">
-                </div>
-            </div>
-
-            <div class="lista-ventas">
-                <h3>Detalle de la factura</h3>
-                <div class="cliente-info">
-                    <h4>Cliente: </h4>
-                    <h4 class="nombre-cliente"></h4>
-                </div>
-
-                <div class="productos">
-                    <div class="titulo-div">
-                        <h4>CODIGO</h4>
-                        <div class="div-info divCodigo"></div>
-                    </div>
-
-                    <div class="titulo-div">
-                        <h4>CANTIDAD</h4>
-                        <div class="div-info divCant"></div>
-                    </div>
-
-                    <div class="titulo-div">
-                        <h4>DESCRIPCION</h4>
-                        <div class="div-info divDesc"></div>
-                    </div>
-
-                    <div class="titulo-div">
-                        <h4>PRECIO UNITARIO</h4>
-                        <div class="div-info divPrecio"></div>
-                    </div>
-
-                    <div class="titulo-div">
-                        <h4>DESCUENTO</h4>
-                        <div class="div-info divDescuento"></div>
-                    </div>
-
-                    <div class="titulo-div">
-                        <h4>SUBTOTAL</h4>
-                        <div class="div-info divSubTotal"></div>
-                    </div>
-
-                    <div class="titulo-div">
-                        <h4>IVA</h4>
-                        <div class="div-info-imp tipoImp"></div>
-                    </div>
-
-                    <div class="titulo-div">
-                        <h4>IMPUESTOS</h4>
-                        <div class="div-info divImp"></div>
-                    </div>
-
-                </div>
-
-                <div class="calculos">
-                    <div class="subtotal">
-                        <h3>SUBTOTAL</h3>
-                        <div class="cant-subtotal-ventas">₡0,00</div>
-                    </div>
-
-                    <div class="iva-13">
-                        <h3>IVA 13%</h3>
-                        <div class="iva-13-calculos">₡0,00</div>
-                    </div>
-
-                    <div class="iva-1">
-                        <h3>IVA 1%</h3>
-                        <div class="iva-1-calculos">₡0,00</div>
-                    </div>
-
-                    <div class="iva-2">
-                        <h3>IVA 2%</h3>
-                        <div class="iva-2-calculos">₡0,00</div>
-                    </div>
-
-                    <div class="descuento-calculos">
-                        <h3>Descuento</h3>
-                        <div class="total-descuento">₡0,00</div>
-                    </div>
-
-                    <div class="exento-calculos">
-                        <h3>Exento</h3>
-                        <div class="total-exento">₡0,00</div>
-                    </div>
-
-                    <div class="total">
-                        <h3>TOTAL</h3>
-                        <div class="cant-total-ventas">₡0,00</div>
-                    </div>
-                </div>
-
-            </div>
-    </div>
-
-    </div>
-
-    <div class="opciones">
-
-        <input type="submit" value="Nueva venta" class="input-opciones btn-nueva-venta">
-
-        <div class="opciones-finales">
-            <input type="submit" value="Totalizar" class="input-opciones btn-totalizar">
-            <input type="submit" value="Salir" class="input-opciones btn-salir">
+        <div class="cabecera">
+            <p>Articulos</p>
         </div>
 
+        <div class="secciones seleccion-articulos">
+            <div class="seleccion-actual"></div>
+            <div class="articulos">Articulos</div>
+            <div class="compras">Compras</div>
+        </div>
+
+        <!--Barra separadora-->
+        <div class="barra-separadora"></div>
+
+        <div class="content articulos-cuadro">
+
+            <div class="articulos-lista">
+                <div class="articulos-header">
+                    <input type="button" value="+" class="agregar">
+                    <div class="borrar"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="55" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                        <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="articulos-elemento">
+                    <div class="detalles-articulo">
+                        <p>Producto</p>
+                        <p>Cantidad</p>
+                        <p>Precio</p>
+                        <p>Descripcion</p>
+                    </div>
+
+                    <div class="elementos"></div>
+                </div>
+
+            </div>
+
+        </div>
     </div>
 
-    <!--Scripts-->
-    <script src="../JAVASCRIPT/ventas.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="../JAVASCRIPT/pdfs-ventas.js"></script>
-    <script src="../JAVASCRIPT/menu-despegable.js"></script>
+
+
+    <script src="../JAVASCRIPT/articulos.js"></script>
     <script src="../JAVASCRIPT/cerrar-sesion.js"></script>
+    <script src="../JAVASCRIPT/menu-despegable.js"></script>
     <script src="../JAVASCRIPT/nombre-usuario.js"></script>
     <script src="../JAVASCRIPT/direccionamiento-logo.js"></script>
 </body>

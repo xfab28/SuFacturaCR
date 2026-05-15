@@ -2,6 +2,16 @@
 body {
     font-family: sans-serif;
     margin: 0;
+    background-color: #EDF1F7;
+}
+
+/*Animación header*/
+@keyframes aparicionHeader {
+    from {
+        transform: translateY(-100%);
+    } to {
+        transform: matrix(0);
+    }
 }
 
 /*Header*/
@@ -13,6 +23,7 @@ header {
     background-color: white;
     margin: 0;
     top: 0;
+    animation: aparicionHeader .8s ease;
 }
 
 header img {
@@ -23,17 +34,26 @@ header img {
     cursor: pointer;
 }
 
+/*Animación cabecera*/
+@keyframes aparicionCabecera {
+    from {
+        transform: translateX(-100%);
+    } to {
+        transform: matrix(0);
+    }
+}
+
 .cabecera {
     display: flex;
     font-size: 25px;
-    background-color: #D9D9D9;
     margin-top: 80px;
     width: 100%;
+    animation: aparicionCabecera .8s ease;
 }
 
 .cabecera p {
     margin-left: 3vh;
-    color: #7D7D7D;
+    font-weight: bold;
 }
 
 .usuario {
@@ -53,17 +73,28 @@ header img {
 
 /*Contenido*/
 
+/*Animacion titulo ventas*/
+@keyframes aparicionTitulo {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: matrix(0);
+    }
+}
+
 .titulo-ventas {
     margin: 10px;
-    border: 2px solid #234fdd;
+    border-top: 4px solid #234fdd;
     width: 191.5vh;
     padding: 15px;
     border-radius: 5px;
+    background-color: white;
+    animation: aparicionTitulo .8s ease;
 }
 
 .ventanas {
     display: flex;
-    border: 2px solid #234fdd;
     margin: 10px;
     border-radius: 5px;
 }
@@ -71,16 +102,28 @@ header img {
 .ventas {
     display: flex;
     flex-direction: column;
-    margin: 10px;
+}
+
+/*Animacion datos factura y calculo y otras cosas*/
+@keyframes aparicionIzquierda {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: matrix(0);
+    }
 }
 
 .datos-factura {
     display: flex;
     flex-direction: column;
     width: 60vh;
-    border: 2px solid #234fdd;
+    border-top: 4px solid #234fdd;
     padding: 15px;
     border-radius: 5px;
+    background-color: white;
+    margin-bottom: 8px;
+    animation: aparicionIzquierda .8s ease;
 }
 
 .datos-factura h3 {
@@ -103,10 +146,12 @@ header img {
     display: flex;
     flex-direction: column;
     width: 60vh;
-    border: 2px solid #234fdd;
+    border-top: 4px solid #234fdd;
     padding: 15px;
     border-radius: 5px;
     margin-top: 2vh;
+    background-color: white;
+    animation: aparicionIzquierda .8s ease;
 }
 
 .articulos h3 {
@@ -182,9 +227,14 @@ header img {
 
 .agregar-limpiar {
     display: flex;
-    margin-left: 40vh;
     gap: 30px;
-    margin-top: 3vh;
+    margin-top: 2vh;
+    background-color: white;
+    align-items: center;
+    height: 10vh;
+    border-radius: 5px;
+    border-top: 4px solid #234fdd;
+    animation: aparicionIzquierda .8s ease;
 }
 
 .btn-agregar {
@@ -195,6 +245,7 @@ header img {
     padding: 20px;
     border-radius: 5px;
     width: 10vh;
+    margin-left: 20px;
 }
 
 .btn-limpiar {
@@ -211,13 +262,25 @@ header img {
     color: #bebcbc;
 }
 
+/*Aparicion derecha*/
+@keyframes aparacionDerecha {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
 .lista-ventas {
-    border: 2px solid #234fdd;
-    margin: 10px;
+    border-top: 4px solid #234fdd;
+    margin-left: 15px;
     border-radius: 5px;
     width: 180vh;
-    height: 65vh;
+    height: 77vh;
     overflow-y: auto;
+    background-color: white;
+    animation: aparacionDerecha .8s ease;
 }
 
 .lista-ventas h3{
@@ -269,16 +332,27 @@ header img {
     margin-left: 2vh;
 }
 
+/*Animación abajo*/
+@keyframes aparacionAbajo {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: matrix(0);
+    }
+}
 
 .opciones {
     display: flex;
     margin: 10px;
-    border: 2px solid #234fdd;
+    border-top: 4px solid #234fdd;
     border-radius: 5px;
     padding: 15px;
     height: 15vh;
     align-items: center;
     gap: 160vh;
+    background-color: white;
+    animation: aparacionAbajo .8s ease;
 }
 
 .input-opciones {
