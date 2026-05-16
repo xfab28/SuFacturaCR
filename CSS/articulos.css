@@ -185,6 +185,12 @@ header img {
     }
 }
 
+/*JS*/
+
+.articulos-cuadro .barra-agregar {
+    display: flex;
+}
+
 .articulos-cuadro .articulos-lista {
     display: flex;
 }
@@ -193,6 +199,9 @@ header img {
     display: none;
 }
 
+.compras-info .barra-agregar {
+    display: none;
+}
 
 .compras-info .articulos-lista {
     display: none;
@@ -205,7 +214,6 @@ header img {
 
 .content {
     display: flex;
-    flex-direction: column;
     width: 100%;
     justify-content: center;
     align-items: center;
@@ -218,13 +226,13 @@ header img {
     position: relative;
     box-shadow: 0px 0px 15px #9BACD4;
     animation: aparicion .8s ease;
+    z-index: 2;
 }
 
 .articulos-header {
     display: flex;
     flex-direction: column;
     padding: 20px;
-    border-right: 2px solid #838b9e;
     gap: 20px;
     position: absolute;
     top: 0;
@@ -241,6 +249,11 @@ header img {
     height: 45px;
     font-size: 30px;
     border: none;
+    transition: 0.5s;
+}
+
+.articulos-header .agregar:active {
+    transform: scale(0.9);
 }
 
 .articulos-header .borrar {
@@ -254,6 +267,11 @@ header img {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: 0.5s;
+}
+
+.articulos-header .borrar:active {
+    transform: scale(0.9);
 }
 
 .articulos-elemento {
@@ -294,4 +312,90 @@ header img {
 
 .elemento p {
     font-size: 20px;
+}
+
+/*Barra de agregar*/
+
+
+.barra-ocultar .barra-agregar {
+    display: none;
+}
+
+.barra-agregar-oculta .barra-agregar {
+    left: 60vh;
+}
+
+.barra-agregar {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 70vh;
+    background-color: #E3F0FC;
+    margin-right: 2vh;
+    box-shadow: 0px 0px 15px #9BACD4;
+    padding: 15px;
+    position: absolute;
+    z-index: 1;
+    left: 12vh;
+    transition: left .8s ease;
+    animation: aparicion .8s ease;
+}
+
+.barra-agregar h3 {
+    font-size: 25px;
+}
+
+.barra-agregar input {
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.barra-agregar .producto-input, .cantidad-input, .precio-input {
+    border: 2px solid #C5DAED;
+    padding: 15px;
+    outline: none;
+    font-size: 14px;
+}
+
+.barra-agregar textarea {
+    border: 2px solid #C5DAED;
+    padding: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    outline: none;
+    border-radius: 5px;
+    font-size: 15px;
+    margin: 5px;
+}
+
+.cantidad-precio {
+    display: flex;
+}
+
+.agregar-btn {
+    background-color: #49c92a;
+    border: none;
+    font-size: 20px;
+    color: white;
+    padding: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+.agregar-btn:active {
+    transform: scale(0.9);
+}
+
+.limpiar-btn {
+    background-color: #C5DAED;
+    border: none;
+    font-size: 20px;
+    padding: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+.limpiar-btn:active {
+    transform: scale(0.9);
 }

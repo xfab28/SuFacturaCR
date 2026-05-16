@@ -108,7 +108,20 @@
         <!--Barra separadora-->
         <div class="barra-separadora"></div>
 
-        <div class="content articulos-cuadro">
+        <div class="content articulos-cuadro barra-agregar-oculta barra-ocultar">
+
+            <div class="barra-agregar">
+                <h3>Agregar productos</h3>
+
+                <input type="text" name="producto" class="producto-input" placeholder="Producto">
+                <div class="cantidad-precio">
+                    <input type="number" name="cantidad" class="cantidad-input" placeholder="Cantidad">
+                    <input type="number" name="precio" class="precio-input" placeholder="Precio">
+                </div>
+                <textarea name="descripcion" class="descripcion-input" placeholder="Descripción" rows="2"></textarea>
+                <input type="submit" class="agregar-btn" value="Agregar">
+                <input type="submit" class="limpiar-btn" value="Limpiar">
+            </div>
 
             <div class="articulos-lista">
                 <div class="articulos-header">
