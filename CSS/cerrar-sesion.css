@@ -1,4 +1,7 @@
 /*Confirmacion*/
+.overlay {
+    z-index: 9999;
+}
 
 @keyframes aparecerModal {
     from{
