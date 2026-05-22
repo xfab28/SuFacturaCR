@@ -97,6 +97,7 @@ header img {
     display: flex;
     margin: 10px;
     border-radius: 5px;
+    margin-top: 2vh;
 }
 
 .ventas {
@@ -124,6 +125,7 @@ header img {
     background-color: white;
     margin-bottom: 8px;
     animation: aparicionIzquierda .8s ease;
+    margin-bottom: 2vh;
 }
 
 .datos-factura h3 {
@@ -149,7 +151,7 @@ header img {
     border-top: 4px solid #234fdd;
     padding: 15px;
     border-radius: 5px;
-    margin-top: 2vh;
+    margin-bottom: 2vh;
     background-color: white;
     animation: aparicionIzquierda .8s ease;
 }
@@ -157,16 +159,6 @@ header img {
 .articulos h3 {
     font-size: 25px;
     margin: 10px;
-    border-radius: 5px;
-}
-
-.codigo {
-    width: 40vh;
-    padding: 15px;
-    outline: none;
-    border: 2px solid #234fdd;
-    margin: 10px;
-    font-size: 20px;
     border-radius: 5px;
 }
 
@@ -231,7 +223,7 @@ header img {
     margin-top: 2vh;
     background-color: white;
     align-items: center;
-    height: 10vh;
+    height: 19vh;
     border-radius: 5px;
     border-top: 4px solid #234fdd;
     animation: aparicionIzquierda .8s ease;
@@ -256,10 +248,6 @@ header img {
     padding: 20px;
     border-radius: 5px;
     width: 10vh; 
-}
-
-.mensaje-aclaratorio {
-    color: #bebcbc;
 }
 
 /*Aparicion derecha*/
@@ -298,38 +286,35 @@ header img {
 
 .productos {
     display: flex;
-    overflow-y: auto;
     border: 1px solid #bebcbc;
-    margin: 10px;
+    margin: 20px;
     height: 50vh;
+    flex-direction: column;
 }
 
-.div-info {
-    display: flex;
-    flex-direction: column;
-    width: 16.7vh;
-    padding: 5px;
+.descripciones-de-productos {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
     align-items: center;
-}
-
-.titulo-div {
-    display: flex;
-    flex-direction: column;
+    width: 100%;
     text-align: center;
-}
-
-.titulo-div h4{
+    gap: 20px;
     border-bottom: 1px solid #bebcbc;
-    margin-bottom: 2px;
 }
 
-.tipoImp {
-    display: flex;
-    flex-direction: column;
-    width: 2vh;
-    padding: 5px;
+.datos-de-producto {
+    width: 100%;
+    overflow-y: auto;
+    height: 45vh;
+}
+
+.productos-insertados {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
     align-items: center;
-    margin-left: 2vh;
+    width: 100%;
+    text-align: center;
+    gap: 40px;
 }
 
 /*Animación abajo*/
@@ -372,104 +357,31 @@ header img {
 .calculos {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    margin: 5px;
 }
 
-.subtotal {
-    display: flex;
-    margin-bottom: 5px;
+.descripciones-de-facturacion {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    align-items: center;
 }
 
-.cant-subtotal-ventas {
-    width: 15vh;
+.resultados-de-facturacion {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    column-gap: 5px;
+    text-align: center;
+    align-items: center;
+}
+
+.datos-compras {
+    font-weight: bold;
+    border-top: 1px solid #234fdd;
     padding: 15px;
-    border: 2px solid #234fdd;
-    border-radius: 5px;
-    font-size: 20px; 
-    margin-left: 3vh;
-} 
-
-.iva-13 {
-    display: flex;
-    margin-bottom: 5px;
-}
-
-.iva-13-calculos {
-    width: 15vh;
-    padding: 15px;
-    border: 2px solid #234fdd;
-    border-radius: 5px;
-    font-size: 20px; 
-    margin-left: 6vh;
-}
-
-.iva-1 {
-    display: flex;
-    margin-bottom: 5px;
-}
-
-.iva-1-calculos {
-    width: 15vh;
-    padding: 15px;
-    border: 2px solid #234fdd;
-    border-radius: 5px;
-    font-size: 20px; 
-    margin-left: 7vh;
-}
-
-.iva-2 {
-    display: flex;
-    margin-bottom: 5px;
-}
-
-.iva-2-calculos {
-    width: 15vh;
-    padding: 15px;
-    border: 2px solid #234fdd;
-    border-radius: 5px;
-    font-size: 20px; 
-    margin-left: 7vh;
-}
-
-.descuento-calculos {
-    display: flex;
-    margin-bottom: 5px;
-}
-
-.total-descuento {
-    width: 15vh;
-    padding: 15px;
-    border: 2px solid #234fdd;
-    border-radius: 5px;
-    font-size: 20px;  
-    margin-left: 3.5vh; 
-}
-
-.exento-calculos {
-    display: flex;
-    margin-bottom: 5px;
-}
-
-.total-exento {
-    width: 15vh;
-    padding: 15px;
-    border: 2px solid #234fdd;
-    border-radius: 5px;
-    font-size: 20px;   
-    margin-left: 6.8vh;
-}
-
-.total {
-    display: flex;
-    margin-bottom: 5px;
-}
-
-.cant-total-ventas {
-    width: 15vh;
-    padding: 15px;
-    border: 2px solid #234fdd;
-    border-radius: 5px;
-    font-size: 20px;
-    margin-left: 7vh;
+    font-size: 25px;
 }
 
 .radios {

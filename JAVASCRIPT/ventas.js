@@ -1,5 +1,4 @@
 const cliente = document.querySelector(".cliente");
-const codigo = document.querySelector(".codigo");
 const articulo = document.querySelector(".articulo");
 const cantidad = document.querySelector(".cantidad");
 const precio = document.querySelector(".precio");
@@ -10,17 +9,6 @@ const btnBuscarCliente = document.querySelector(".btn-buscar-cliente");
 const btnBuscarCodigo = document.querySelector(".btn-buscar-codigo");
 const btnAgregar = document.querySelector(".btn-agregar");
 const btnLimpiar = document.querySelector(".btn-limpiar");
-
-const divCant = document.querySelector(".divCant");
-const divDesc = document.querySelector(".divDesc");
-const divPrecio = document.querySelector(".divPrecio");
-const divCodigo = document.querySelector(".divCodigo");
-const divFactura = document.querySelector(".divImp");
-const divCliente = document.querySelector(".divCliente");
-const divDescuento = document.querySelector(".divDescuento");
-const divExento = document.querySelector(".divExento");
-const tipoImp = document.querySelector(".tipoImp");
-const divSubTotal = document.querySelector(".divSubTotal");
 
 const iva13 = document.querySelector(".iva13");
 const iva1 = document.querySelector(".iva1");
@@ -42,6 +30,8 @@ const btnNuevaVenta = document.querySelector(".btn-nueva-venta");
 const btnSalir = document.querySelector(".btn-salir");
 
 const nombreCliente = document.querySelector(".nombre-cliente");
+
+const datos_de_producto = document.querySelector(".datos-de-producto");
 
 //Si no hay precio, descuento y exento, radios desactivados
 
@@ -65,6 +55,7 @@ precio.addEventListener("change", () => {
 let esIVA13 = false;
 let esIVA1 = false;
 let esIVA2 = false;
+let IVA = 0;
 
 //Resultados
 let impuestoDest = 0;
@@ -122,7 +113,15 @@ iva13.addEventListener("change", () => {
         imp13.innerHTML = "₡" + impuesto_13;
         impuestoDest = impuesto_13;
     } else {
-        console.log("Radio de 13% desactivado");
+        esIVA13 = false;
+        esIVA1 = false;
+        esIVA2 = false;
+
+        iva1.disabled = false;
+        iva2.disabled = false;
+
+        imp13.style.color = "#bebcbc";
+        imp13.textContent = "13%";
     }
 });
 
@@ -169,7 +168,15 @@ iva1.addEventListener("change", () => {
         imp1.innerHTML = "₡" + impuesto_1;
         impuestoDest = impuesto_1;
     } else {
-        console.log("Radio de 1% desactivado");
+        esIVA13 = false;
+        esIVA1 = false;
+        esIVA2 = false;
+
+        iva13.disabled = false;
+        iva2.disabled = false;
+
+        imp1.style.color = "#bebcbc";
+        imp1.textContent = "1%";
     }
 });
 
@@ -216,93 +223,48 @@ iva2.addEventListener("change", () => {
         imp2.innerHTML = "₡" + impuesto_2;
         impuestoDest = impuesto_2;
     } else {
-        console.log("Radio de 2% desactivado");
-    }
-});
+        esIVA13 = false;
+        esIVA1 = false;
+        esIVA2 = false;
 
-//Desactivar radios
-iva13.addEventListener("dblclick", () => {
-    if (iva13.checked) {
-        iva13.checked = false;
-        if (iva13.checked == false) {
-            imp13.style.color = "#bebcbc";
-            imp13.innerHTML = "13%";
+        iva13.disabled = false;
+        iva1.disabled = false;
 
-            iva1.disabled = false;
-            iva2.disabled = false;
-        }
-    }
-});
-
-iva1.addEventListener("dblclick", () => {
-    if (iva1.checked) {
-        iva1.checked = false;
-        if (iva1.checked == false) {
-            imp1.style.color = "#bebcbc";
-            imp1.innerHTML = "1%";
-
-            iva13.disabled = false;
-            iva2.disabled = false;
-        }
-    }
-});
-
-iva2.addEventListener("dblclick", () => {
-    if (iva2.checked) {
-        iva2.checked = false;
-        if (iva2.checked == false) {
-            imp2.style.color = "#bebcbc";
-            imp2.innerHTML = "2%";
-
-            iva1.disabled = false;
-            iva13.disabled = false;
-        }
+        imp2.style.color = "#bebcbc";
+        imp2.textContent = "2%";
     }
 });
 
 //Agregar productos
 btnAgregar.addEventListener("click", () => {
-    const p1 = document.createElement("p");
-    const p2 = document.createElement("p");
-    const p3 = document.createElement("p");
-    const p4 = document.createElement("p");
-    const p5 = document.createElement("p");
-    const p7 = document.createElement("p");
-    const p8 = document.createElement("p");
+    nombreCliente.textContent = cliente.value;
+    cliente.disabled = true;
 
-    const pImp = document.createElement("p");
+    const productos_insertados = document.createElement("div");
+    productos_insertados.classList.add("productos-insertados");
 
-    p1.innerHTML = cantidad.value;
-    p2.innerHTML = articulo.value;
-    p3.innerHTML = "₡" + precio.value;
-    p4.innerHTML = codigo.value;
-    p5.innerHTML = "₡" + impuestoDest;
-    nombreCliente.innerHTML = cliente.value;
-    p7.innerHTML = descuento.value;
+    let subtotal_float = parseFloat(cantidad.value) * parseFloat(precio.value);
 
     if (esIVA13 == true && esIVA1 == false && esIVA2 == false) {
-        pImp.innerHTML = "13%";
+        total_iva13 += impuestoDest;
+        IVA = "13%";
     } else if (esIVA13 == false && esIVA1 == true && esIVA2 == false) {
-        pImp.innerHTML = "1%";
+        total_iva1 += impuestoDest;
+        IVA = "1%";
     } else if (esIVA13 == false && esIVA1 == false && esIVA2 == true) {
-        pImp.innerHTML = "2%";
+        total_iva2 += impuestoDest;
+        IVA = "2%";
     }
 
-    let cantFloat = parseFloat(cantidad.value);
-    let precioFloat = parseFloat(precio.value);
-    let subtotalFloat = precioFloat * cantFloat;
-    p8.innerHTML = "₡" + subtotalFloat;
+    let datos = [cantidad.value, articulo.value, precio.value, descuento.value, subtotal_float, IVA, impuestoDest];
+    
+    for (let i = 0; i < datos.length; i++) {
+        const p = document.createElement("p");
+        p.textContent = datos[i];
+        productos_insertados.appendChild(p);
+    }
 
-    divCant.appendChild(p1);
-    divDesc.appendChild(p2);
-    divPrecio.appendChild(p3);
-    divCodigo.appendChild(p4);
-    divFactura.appendChild(p5);
-    divDescuento.appendChild(p7);
-    tipoImp.appendChild(pImp);
-    divSubTotal.appendChild(p8);
-
-    cliente.disabled = true;
+    datos_de_producto.appendChild(productos_insertados);
 
     //Descuento
     let descFloat = parseFloat(descuento.value);
@@ -315,16 +277,10 @@ btnAgregar.addEventListener("click", () => {
     exentoCalculo.innerHTML = "₡" + total_exe;
 
     //IVAS
-    if (esIVA13 == true && esIVA1 == false && esIVA2 == false) {
-        total_iva13 += impuestoDest;
-        iva_13.innerHTML = "₡" + total_iva13;
-    } else if (esIVA13 == false && esIVA1 == true && esIVA2 == false) {
-        total_iva1 += impuestoDest;
-        iva_1.innerHTML = "₡" + total_iva1;  
-    } else if (esIVA13 == false && esIVA1 == false && esIVA2 == true) {
-        total_iva2 += impuestoDest;
-        iva_2.innerHTML = "₡" + total_iva2;
-    }
+    iva_13.innerHTML = "₡" + total_iva13;   
+    iva_1.innerHTML = "₡" + total_iva1;     
+    iva_2.innerHTML = "₡" + total_iva2;
+    
 
     //Subtotal
     let gravado13 = total_iva13 / 0.13;
@@ -346,7 +302,6 @@ btnAgregar.addEventListener("click", () => {
 //Limpiar inputs
 btnLimpiar.addEventListener("click", () => {
     cliente.value = "";
-    codigo.value = "";
     articulo.value = "";
     cantidad.value = "";
     precio.value = "";

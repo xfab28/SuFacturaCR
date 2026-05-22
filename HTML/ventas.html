@@ -110,7 +110,6 @@
                     <h3>Datos de la factura</h3>
 
                     <input type="text" placeholder="Cliente" class="cliente">
-                    <input type="number" placeholder="Codigo" class="codigo">
                     <input type="text" placeholder="Descripción" class="articulo">
 
                 </div>
@@ -130,9 +129,9 @@
                     </div>
 
                     <div class="radios">
-                        <input type="radio" class="iva13">13%
-                        <input type="radio" class="iva1">1%
-                        <input type="radio" class="iva2">2%
+                        <input type="checkbox" class="iva13">13%
+                        <input type="checkbox" class="iva1">1%
+                        <input type="checkbox" class="iva2">2%
                     </div>
 
                     <div class="ivas">
@@ -140,8 +139,6 @@
                         <div class="iva imp1">1%</div>
                         <div class="iva imp2">2%</div>
                     </div>
-
-                    <h4 class="mensaje-aclaratorio">(Los datos de "Datos de la Factura" tambien se agregan)</h4>
                     
                 </div>
 
@@ -159,82 +156,42 @@
                 </div>
 
                 <div class="productos">
-                    <div class="titulo-div">
-                        <h4>CÓDIGO</h4>
-                        <div class="div-info divCodigo"></div>
-                    </div>
 
-                    <div class="titulo-div">
+
+                    <div class="descripciones-de-productos">
                         <h4>CANTIDAD</h4>
-                        <div class="div-info divCant"></div>
-                    </div>
-
-                    <div class="titulo-div">
                         <h4>DESCRIPCIÓN</h4>
-                        <div class="div-info divDesc"></div>
-                    </div>
-
-                    <div class="titulo-div">
                         <h4>PRECIO UNITARIO</h4>
-                        <div class="div-info divPrecio"></div>
-                    </div>
-
-                    <div class="titulo-div">
                         <h4>DESCUENTO</h4>
-                        <div class="div-info divDescuento"></div>
-                    </div>
-
-                    <div class="titulo-div">
                         <h4>SUBTOTAL</h4>
-                        <div class="div-info divSubTotal"></div>
-                    </div>
-
-                    <div class="titulo-div">
                         <h4>IVA</h4>
-                        <div class="div-info-imp tipoImp"></div>
+                        <h4>IMPUESTOS</h4>
                     </div>
 
-                    <div class="titulo-div">
-                        <h4>IMPUESTOS</h4>
-                        <div class="div-info divImp"></div>
-                    </div>
+                    <div class="datos-de-producto"></div>
 
                 </div>
 
                 <div class="calculos">
-                    <div class="subtotal">
+
+                    <div class="descripciones-de-facturacion">
                         <h3>SUBTOTAL</h3>
-                        <div class="cant-subtotal-ventas">₡0,00</div>
-                    </div>
-
-                    <div class="iva-13">
                         <h3>IVA 13%</h3>
-                        <div class="iva-13-calculos">₡0,00</div>
-                    </div>
-
-                    <div class="iva-1">
                         <h3>IVA 1%</h3>
-                        <div class="iva-1-calculos">₡0,00</div>
-                    </div>
-
-                    <div class="iva-2">
                         <h3>IVA 2%</h3>
-                        <div class="iva-2-calculos">₡0,00</div>
-                    </div>
-
-                    <div class="descuento-calculos">
                         <h3>Descuento</h3>
-                        <div class="total-descuento">₡0,00</div>
-                    </div>
-
-                    <div class="exento-calculos">
                         <h3>Exento</h3>
-                        <div class="total-exento">₡0,00</div>
+                        <h3>TOTAL</h3>
                     </div>
 
-                    <div class="total">
-                        <h3>TOTAL</h3>
-                        <div class="cant-total-ventas">₡0,00</div>
+                    <div class="resultados-de-facturacion">
+                        <div class="cant-subtotal-ventas datos-compras">₡0,00</div>
+                        <div class="iva-13-calculos datos-compras">₡0,00</div>
+                        <div class="iva-1-calculos datos-compras">₡0,00</div>
+                        <div class="iva-2-calculos datos-compras">₡0,00</div>
+                        <div class="total-descuento datos-compras">₡0,00</div>
+                        <div class="total-exento datos-compras">₡0,00</div>
+                        <div class="cant-total-ventas datos-compras">₡0,00</div>
                     </div>
                 </div>
 
