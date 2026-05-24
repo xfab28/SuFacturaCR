@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/jpeg" href="../IMAGENES/icon.jpeg">
-    <link rel="stylesheet" href="../CSS/inicio.css">
     <link rel="stylesheet" href="../CSS/menu-despegable.css">
+    <link rel="stylesheet" href="../CSS/cliente.css">
     <link rel="stylesheet" href="../CSS/cerrar-sesion.css">
-    <title>Inicio</title>
+    <title>Clientes</title>
 </head>
 <body>
-
+    
     <!--Header-->
     <header>
         <div class="menu-container" id="menu-container">
@@ -93,92 +93,67 @@
         </nav>
     </div>
 
-
-
+    <!--Contenido-->
     <div class="contenido">
-        
+
         <div class="cabecera">
-            <p>Inicio</p>
+            <p>Clientes</p>
         </div>
 
-        <div class="informacion">
+        <div class="barra-opciones">
+            <input type="button" class="agregar-cliente" value="+">
 
-
-            <div class="tarjetas-info">
-                <div class="negocio">
-                    <label for="input-foto1">
-                        <img src="../IMAGENES/imagen-defecto.jpg" alt="imagen-defecto1" class="imagen-defecto1">
-                    </label>
-
-                    <input type="file" id="input-foto1" hidden>
-
-                    <div class="info-negocio">
-                        <h1>Negocio</h1>
-
-                        <div class="titulo-nombre-negocio">                       
-                            <h2>Nombre<h2 class="nombre-negocio">Pulperia Tia Liz</h2></h2>
-                        </div>
-
-                        <div class="titulo-sucursal-negocio">
-                            <h2>Sucursal<h2 class="sucursal">SUCURSAL</h2></h2>
-                        </div>
-
-                        <div class="titulo-terminal-negocio">
-                            <h2>Terminal<h2 class="sucursal">TERMINAL</h2></h2>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="propietario">
-                    <label for="input-foto2">
-                        <img src="../IMAGENES/imagen-defecto.jpg" alt="imagen-defecto2" class="imagen-defecto2">
-                    </label>
-
-                    <input type="file" id="input-foto2" hidden>
-
-                    <div class="info-propietario">
-                        <h1>Propietario</h1>
-
-                        <div class="titulo-nombre-propietario">
-                            <h2>Nombre<h2 class="nombre-propietario"></h2></h2>
-                        </div>
-
-                        <div class="titulo-perfil-propietario">
-                            <h2>Perfil<h2 class="perfil">Administrativo</h2></h2>
-                        </div>
-
-                        <div class="titulo-plan-propietario">
-                            <h2>Plan<h2 class="nombre-propietario">Plan Pospago</h2></h2>
-                        </div>
-                    </div>
-                </div>
-
+            <div class="borrar-cliente"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="55" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/>
+                </svg>
             </div>
 
-            <div class="ingresos-compras">
-                <div class="ingresos">
-                    <h2 class="ingresos-id"><svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"/>
-                </svg>Ingresos</h2>
-                <h2 class="cant-ingresos">+ ₡0.00</h2>
-                </div>
-
-                <div class="compras">
-                    <h2 class="compras-id"><svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1"/>
-                    </svg>Compras</h2>
-                    <h2 class="cant-compras">- ₡0.00</h2>
-                </div>
-            </div>
+            <input type="text" class="buscar-clientes" placeholder="Buscar...">
         </div>
+
+        <div class="lista-clientes">
+
+            <div class="datos-cliente">
+                <p>Contacto</p>
+                <p>Empresa</p>
+                <p>Cédula</p>
+                <p>Correo</p>
+                <p>Teléfono</p>
+            </div>
+
+            <div class="clientes-registrados"></div>
+
+        </div>
+
+        <div class="ingresar-clientes ingresar-clientes-null">
+            <form>
+                <div class="grupo">
+                    <input type="text" class="contacto-cliente input-cliente" name="contacto" placeholder="Contacto">
+                    <input type="text" class="empresa-cliente input-cliente" name="empresa" placeholder="Empresa">
+                </div>
+
+                <div class="grupo">
+                    <input type="number" class="cedula-cliente input-cliente" name="cedula" placeholder="Cédula">
+                    <input type="email" class="correo-cliente input-cliente" name="correo" placeholder="Correo">
+                </div>
+
+                <input type="number" class="telefono-cliente input-cliente" name="telefono" placeholder="Teléfono">
+
+                <div class="grupo botones">
+                    <input type="submit" class="agregar-input" value="Agregar">
+                    <input type="submit" class="limpiar-input" value="Limpiar">
+                </div>
+            </form>
+        </div>
+
     </div>
-     
+
     <!--Scripts-->
-    <script src="../JAVASCRIPT/inicio.js"></script>
-    <script src="../JAVASCRIPT/menu-despegable.js"></script>
     <script src="../JAVASCRIPT/cerrar-sesion.js"></script>
+    <script src="../JAVASCRIPT/menu-despegable.js"></script>
     <script src="../JAVASCRIPT/nombre-usuario.js"></script>
-    <script src="../JAVASCRIPT/direccionamiento-logo.js"></script>
-    <script src="../JAVASCRIPT/fotos.js"></script>
+    <script src="../JAVASCRIPT/barra-clientes.js"></script>
+    <script src="../JAVASCRIPT/clientes.js"></script>
+
 </body>
 </html>

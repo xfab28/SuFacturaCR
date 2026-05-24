@@ -1,0 +1,304 @@
+/*body*/
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #EDF1F7;
+}
+
+/*Animación header*/
+@keyframes aparicionHeader {
+    from {
+        transform: translateY(-100%);
+    } to {
+        transform: matrix(0);
+    }
+}
+
+/*Header*/
+header {
+    display: flex;
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    background-color: white;
+    animation: aparicionHeader .8s ease;
+}
+
+header img {
+    margin: 0;
+    width: 350px;
+    height: 50px;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.usuario {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 3rem;
+}
+
+#nombre-usuario {
+    font-size: 18px;
+}
+
+.contenido {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+}
+
+/*Animación cabecera*/
+@keyframes aparicionCabecera {
+    from {
+        transform: translateX(-100%);
+    } to {
+        transform: matrix(0);
+    }
+}
+
+/*Cabecera*/
+
+.cabecera {
+    display: flex;
+    font-size: 25px;
+    margin-top: 80px;
+    width: 100%;
+    animation: aparicionCabecera .8s ease;
+}
+
+.cabecera p {
+    margin-left: 3vh;
+    font-weight: bold;
+}
+
+/*Animacion barra de opciones y cuadro de clientes*/
+@keyframes aparicionArriba {
+    from {
+        opacity: 0;
+        transform: translateY(50%);
+    }
+    to {
+        opacity: 1;
+        transform: matrix(0);
+    }
+}
+
+.barra-opciones {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    box-shadow: 0px 0px 15px #9BACD4;
+    border-radius: 10px;
+    border: none;
+    position: relative;
+    animation: aparicionArriba .8s ease;
+}
+
+.agregar-cliente {
+    width: 50px;
+    height: 55px;
+    background-color: #49c92a;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    font-size: 35px;
+    margin: 10px;
+    transition: .8s;
+}
+
+.agregar-cliente:active {
+    transform: scale(0.9);
+}
+
+.borrar-cliente {
+    border: none;
+    background-color: red;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    width: 50px;
+    height: 55px;
+    transition: 0.5s;
+}
+
+.borrar-cliente svg {
+    width: 30px;
+    height: 35px;
+}
+
+.borrar-cliente:active {
+    transform: scale(0.9);
+}
+
+.buscar-clientes {
+    width: 100vh;
+    height: 55px;
+    border-radius: 10px;
+    font-size: 25px;
+    outline: none;
+    border: 3px solid #C5DAED;
+    position: absolute;
+    right: 10px;
+}
+
+.lista-clientes {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3vh;
+    box-shadow: 0px 0px 15px #9BACD4;
+    animation: aparicionArriba .8s ease;
+}
+
+.datos-cliente {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    width: 100%;
+    background-color: #C5DAED;
+    align-items: center;
+    text-align: center;
+}
+
+.datos-cliente p {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.clientes-registrados {
+    display: flex;
+    flex-direction: column;
+    background-color: #EDEDED;
+    width: 100%;
+    height: 70vh;
+    overflow-y: auto;
+}
+
+.cliente-regis {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    width: 100%;
+    text-align: center;
+    align-items: center;
+}
+
+.filtro {
+    display: none;
+}
+
+.color-azul {
+    background-color: #768BD6;
+}
+
+.cliente-regis p {
+    font-size: 25px;
+}
+
+/*Animacion ingresar clientes*/
+@keyframes aparecerIngresarClientes {
+    from {
+        opacity: 0;
+        transform: translateY(-10%);
+    }
+    to {
+        opacity: 1;
+        transform: matrix(0);
+    }
+}
+
+@keyframes desaparecerIngresarClientes {
+    from {
+        opacity: 1;
+        transform: matrix(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-10%);
+    }
+}
+
+.aparecer-ingresar-clientes {
+    animation: aparecerIngresarClientes .8s ease;
+}
+
+.desaparecer-ingresar-clientes {
+    animation: desaparecerIngresarClientes .8s ease;
+}
+
+.ingresar-clientes-null {
+    display: none;
+}
+
+.ingresar-clientes {
+    box-shadow: 0px 0px 15px #9BACD4;
+    width: 90%;
+    border-radius: 10px;
+    position: absolute;
+    top: 20vh;
+    background-color: #EDF1F7;
+}
+
+.ingresar-clientes form {
+    display: flex;
+    width: 100%;
+    gap: 2vh;
+    align-items: center;
+    margin: 10px;
+}
+
+.grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+.input-cliente {
+    outline: none;
+    border: 2px solid #C5DAED;
+    border-radius: 5px;
+    height: 55px;
+    width: 50vh;
+    font-size: 20px;
+}
+
+.agregar-input {
+    border: none;
+    border-radius: 5px;
+    height: 55px;
+    width: 15vh;
+    color: white;
+    background-color: #49c92a;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.agregar-input:active {
+    transform: scale(0.9);
+}
+
+.limpiar-input {
+    border: none;
+    border-radius: 5px;
+    height: 55px;
+    width: 15vh;
+    font-weight: bolder;
+    background-color: #C5DAED;
+    font-size: 20px;
+}
+
+.limpiar-input:active {
+    transform: scale(0.9);
+}
