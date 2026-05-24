@@ -142,6 +142,12 @@ header img {
     transform: scale(0.9);
 }
 
+.mensaje-seleccionado {
+    color: red;
+    font-size: 20px;
+    margin: 10px;
+}
+
 .buscar-clientes {
     width: 100vh;
     height: 55px;
@@ -166,7 +172,7 @@ header img {
 
 .datos-cliente {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     width: 100%;
     background-color: #C5DAED;
     align-items: center;
@@ -189,10 +195,14 @@ header img {
 
 .cliente-regis {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     width: 100%;
     text-align: center;
     align-items: center;
+}
+
+.seleccionado {
+    background-color: rgba(255, 0, 0, 0.3);
 }
 
 .filtro {
