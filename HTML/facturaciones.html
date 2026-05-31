@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/jpeg" href="../IMAGENES/icon.jpeg">
     <link rel="stylesheet" href="../CSS/menu-despegable.css">
-    <link rel="stylesheet" href="../CSS/cliente.css">
     <link rel="stylesheet" href="../CSS/cerrar-sesion.css">
-    <title>Clientes</title>
+    <link rel="stylesheet" href="../CSS/facturaciones.css">
+    <title>Facturaciones</title>
 </head>
 <body>
     
@@ -71,7 +71,7 @@
                 </li>
 
                 <li>
-                    <a href="facturaciones.html" class="direcciones">
+                    <a href="#" class="direcciones">
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-newspaper" viewBox="0 0 16 16">
                             <path d="M0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14 2.5v10.528c0 .3-.05.654-.238.972h.738a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 1 1 0v9a1.5 1.5 0 0 1-1.5 1.5H1.497A1.497 1.497 0 0 1 0 13.5zM12 14c.37 0 .654-.211.853-.441.092-.106.147-.279.147-.531V2.5a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5v11c0 .278.223.5.497.5z"/>
                             <path d="M2 3h10v2H2zm0 3h4v3H2zm0 4h4v1H2zm0 2h4v1H2zm5-6h2v1H7zm3 0h2v1h-2zM7 8h2v1H7zm3 0h2v1h-2zm-3 2h2v1H7zm3 0h2v1h-2zm-3 2h2v1H7zm3 0h2v1h-2z"/>
@@ -94,70 +94,142 @@
     </div>
 
     <!--Contenido-->
+
     <div class="contenido">
 
         <div class="cabecera">
-            <p>Clientes</p>
+            <p>Facturaciones</p>
         </div>
 
-        <div class="barra-opciones">
-            <input type="button" class="agregar-cliente" value="+">
+        <div class="filtrar">
+            <h4>Filtrar por: </h4>
+            <Select class="select-filtrado">
+                <option value="1">Ventas</option>
+                <option value="2">Compras</option>
+            </Select>
+        </div>
 
-            <div class="borrar-cliente"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="55" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
-                <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/>
-                </svg>
+        <div class="barra-separadora"></div>
+
+        <div class="facturas">
+
+            <div class="facturaciones-venta">
+                <div class="facturacion-venta">
+                    <p>1</p>
+                    <p>Prueba Facturación</p>
+                    <p>30/05/2026</p>
+                    <p>Comprobante</p>
+                    <p>25.000</p>
+                    <p>Pagado</p>
+                </div>
             </div>
 
-            <div class="mensaje-seleccionado"></div>
-
-            <input type="text" class="buscar-clientes" placeholder="Buscar...">
-        </div>
-
-        <div class="lista-clientes">
-
-            <div class="datos-cliente">
-                <p>Id</p>
-                <p>Contacto</p>
-                <p>Empresa</p>
-                <p>Cédula</p>
-                <p>Correo</p>
-                <p>Teléfono</p>
+            <div class="facturaciones-compra ocultar-facturaciones">
+                <div class="facturacion-compra">
+                    <p>1</p>
+                    <p>Prueba Facturación</p>
+                    <p>30/05/2026</p>
+                    <p>Comprobante</p>
+                    <p>25.000</p>
+                    <p>Pagado</p>
+                </div>
             </div>
 
-            <div class="clientes-registrados"></div>
+            <div class="datos-emision">
 
-        </div>
-
-        <div class="ingresar-clientes ingresar-clientes-null">
-            <form>
-                <div class="grupo">
-                    <input type="text" class="contacto-cliente input-cliente" name="contacto" placeholder="Contacto">
-                    <input type="text" class="empresa-cliente input-cliente" name="empresa" placeholder="Empresa">
+                <div class="comprobante">
+                    <h2>Comprobante</h2>
+                    <h2>#899700</h2>
                 </div>
 
-                <div class="grupo">
-                    <input type="number" class="cedula-cliente input-cliente" name="cedula" placeholder="Cédula">
-                    <input type="email" class="correo-cliente input-cliente" name="correo" placeholder="Correo">
+                <div class="info-fact">
+
+                    <div class="div-info">
+                        <h3>Fecha de emision: </h3>
+                        <h3>30/05/2026</h3>
+                    </div>
+
+                    <div class="div-info">
+                        <h3>Cliente: </h3>
+                        <h3>Fabricio Marin</h3>
+                    </div>
+
+                    <div class="div-info">
+                        <h3>Correo: </h3>
+                        <h3>fabricio@gmail.com</h3>
+                    </div>
+
+                    <div class="div-info">
+                        <h3>Telefono: </h3>
+                        <h3>7120-3164</h3>
+                    </div>
+
+                    <div class="div-info">
+                        <h3>Cedula: </h3>
+                        <h3>2-0924-0471</h3>
+                    </div>
+
+                    <div class="div-info">
+                        <h3>Direccion: </h3>
+                        <h3>Atenas</h3>
+                    </div>
+
                 </div>
 
-                <input type="number" class="telefono-cliente input-cliente" name="telefono" placeholder="Teléfono">
+                <div class="items">
+                    <h2>Items</h2>
+                    <div class="caja-items">
 
-                <div class="grupo botones">
-                    <input type="submit" class="agregar-input" value="Agregar">
-                    <input type="submit" class="limpiar-input" value="Limpiar">
+                        <div class="tipo-dato">
+                            <p>#</p>
+                            <p>Descripcion</p>
+                            <p>Monto</p>
+                            <p>Descuento</p>
+                            <p>Monto Neto</p>
+                            <p>Impuestos</p>
+                            <p>Monto Bruto</p>
+                        </div>
+
+                        <div class="registro-items">
+                            <div class="item">
+                                <p>1</p>
+                                <p>CONTABILIDAD ENERO</p>
+                                <p>25.000</p>
+                                <p>0.00</p>
+                                <p>20000</p>
+                                <p>5000</p>
+                                <p>25.000</p>
+                            </div>
+                        </div>
+
+                    </div>
+
                 </div>
-            </form>
+
+                <div class="detalles">
+                    <h3>*</h3>
+                    <h3>Total</h3>
+                    <h3>25.000</h3>
+                    <h3>0.00</h3>
+                    <h3>20000</h3>
+                    <h3>5000</h3>
+                    <h3>25.000</h3>
+                </div>
+
+                <div class="ver-pdf">Ver pdf</div>
+
+            </div>
+
         </div>
 
     </div>
 
     <!--Scripts-->
-    <script src="../JAVASCRIPT/cerrar-sesion.js"></script>
     <script src="../JAVASCRIPT/menu-despegable.js"></script>
+    <script src="../JAVASCRIPT/cerrar-sesion.js"></script>
     <script src="../JAVASCRIPT/nombre-usuario.js"></script>
-    <script src="../JAVASCRIPT/barra-clientes.js"></script>
-    <script src="../JAVASCRIPT/clientes.js"></script>
     <script src="../JAVASCRIPT/direccionamiento-logo.js"></script>
+    <script src="../JAVASCRIPT/facturaciones.js"></script>
 
 </body>
 </html>

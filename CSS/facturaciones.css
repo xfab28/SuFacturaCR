@@ -1,0 +1,288 @@
+/*body*/
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #EDF1F7;
+}
+
+/*Animación header*/
+@keyframes aparicionHeader {
+    from {
+        transform: translateY(-100%);
+    } to {
+        transform: matrix(0);
+    }
+}
+
+/*Header*/
+header {
+    display: flex;
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    background-color: white;
+    animation: aparicionHeader .8s ease;
+}
+
+header img {
+    margin: 0;
+    width: 350px;
+    height: 50px;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.usuario {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 3rem;
+}
+
+#nombre-usuario {
+    font-size: 18px;
+}
+
+/*Contenido*/
+.contenido {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/*Animación cabecera*/
+@keyframes aparicionCabecera {
+    from {
+        transform: translateX(-100%);
+    } to {
+        transform: matrix(0);
+    }
+}
+
+/*Cabecera*/
+
+.cabecera {
+    display: flex;
+    font-size: 25px;
+    margin-top: 80px;
+    width: 100%;
+    animation: aparicionCabecera .8s ease;
+}
+
+.cabecera p {
+    margin-left: 3vh;
+    font-weight: bold;
+}
+
+/*Animación filtrar*/
+@keyframes filtrar-animacion {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.filtrar {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    width: 95%;
+    animation: filtrar-animacion .8s ease;
+}
+
+.filtrar h4 {
+    font-size: 20px;
+}
+
+.filtrar select {
+    padding: 15px;
+    font-size: 17px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 15px #9BACD4;
+}
+
+.barra-separadora {
+    display: flex;
+    width: 95%;
+    padding: 1px;
+    background-color: #9BACD4;
+}
+
+.facturas {
+    display: flex;
+    width: 95%;
+}
+
+.facturaciones-venta {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2vh;
+    width: 100%;
+    gap: 5px;
+    transition: width .8s ease;
+}
+
+/*Animación facturación venta*/
+@keyframes venta-compra-animacion {
+    from {
+        opacity: 0;
+        transform: translateY(-10%);
+    } 
+    to {
+        opacity: 1;
+        transform: matrix(0)
+    }
+}
+
+.facturacion-venta {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    border-radius: 5px;
+    border-left: 3px solid #2AD42E;
+    background-color: white;
+    animation: venta-compra-animacion .8s ease;
+}
+
+.facturacion-venta p {
+    margin-left: 10px;
+}
+
+.facturaciones-compra {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2vh;
+    width: 100%;
+    gap: 5px;
+    transition: width .8s ease;
+}
+
+.facturacion-compra {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    border-radius: 5px;
+    border-left: 3px solid #CC2121;
+    background-color: white;
+    animation: venta-compra-animacion .8s ease;
+}
+
+.facturacion-compra p {
+    margin-left: 10px;
+}
+
+.datos-emision {
+    display: flex;
+    flex-direction: column;
+    width: 0%;
+    height: 78vh;
+    border-radius: 5px;
+    background-color: white;
+    margin-top: 2vh;
+    margin-left: 2vh;
+    animation: animacion-datos .8s ease;
+    align-items: center;
+    overflow: hidden;
+}
+
+.comprobante {
+    display: flex;
+    gap: 10px;
+    width: 95%;
+    border-bottom: 1px solid #9BACD4;
+}
+
+.comprobante :first-child {
+    color: #1fa0db;
+}
+
+.info-fact {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 95%;
+    border-bottom: 1px solid #9BACD4;
+}
+
+.div-info {
+    display: flex;
+    gap: 10px;
+}
+
+.items {
+   width: 95%; 
+   border-bottom: 1px solid #9BACD4;
+}
+
+.caja-items {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 3vh;
+}
+
+.tipo-dato {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    align-items: center;
+    text-align: center;
+}
+
+.tipo-dato p {
+    color: #818586;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.registro-items {
+    display: flex;
+    flex-direction: column;
+}
+
+.item {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    align-items: center;
+    background-color: #adafaf;
+    border-top: 2px solid #818586;
+    border-bottom: 2px solid #818586;
+    text-align: center;
+}
+
+.detalles {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    width: 95%;
+    border-bottom: 1px solid #9BACD4;
+}
+
+.ver-pdf {
+    width: 20%;
+    padding: 15px;
+    background-color: #1fa0db;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 2vh;
+    cursor: pointer;
+}
+
+/*Animaciones*/
+.cambio-medida {
+    width: 50%;
+}
+
+.ocultar-facturaciones {
+    display: none;
+}
