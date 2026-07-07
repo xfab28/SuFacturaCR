@@ -2,7 +2,7 @@
 body {
     font-family: sans-serif;
     margin: 0;
-    background-color: #EDF1F7;
+    background-color: #40A9DD;
 }
 
 /*Animación header*/
@@ -77,6 +77,7 @@ header img {
 .cabecera p {
     margin-left: 3vh;
     font-weight: bold;
+    color: white;
 }
 
 /*Animación cabecera*/
@@ -101,12 +102,12 @@ header img {
     justify-content: center;
     align-items: center;
     position: relative;
-    background-color: #E1E7F2;
+    background-color: white;
     z-index: 0;
     animation: aparicionSeccion .8s ease;
 }
 
-.seleccion-articulos .articulos {
+.seleccion-articulos .articulos-slash {
     border-radius: 10px;
     color: white;
     cursor: pointer;
@@ -114,7 +115,7 @@ header img {
     transition: color .3s ease;
 }
 
-.seleccion-articulos .compras {
+.seleccion-articulos .compras-slash {
     border-radius: 10px;
     color: #000000;
     cursor: pointer;
@@ -125,7 +126,7 @@ header img {
 
 .seleccion-articulos .seleccion-actual {
     position: absolute;
-    background-color: #242057;
+    background-color: #4bccb7;
     width: 116.26px;
     height: 45px;
     border-radius: 10px;
@@ -134,7 +135,7 @@ header img {
     transition: left .8s ease;
 }
 
-.seleccion-compras .articulos {
+.seleccion-compras .articulos-slash {
     cursor: pointer;
     border-radius: 10px;
     color: #000000;
@@ -142,7 +143,7 @@ header img {
     transition: color .3s ease;
 }
 
-.seleccion-compras .compras {
+.seleccion-compras .compras-slash {
     color: white;
     border-radius: 10px;
     cursor: pointer;
@@ -153,7 +154,7 @@ header img {
 
 .seleccion-compras .seleccion-actual {
     position: absolute;
-    background-color: #242057;
+    background-color: #4bccb7;
     width: 116.26px;
     height: 45px;
     border-radius: 10px;
@@ -166,7 +167,7 @@ header img {
     display: flex;
     width: 95%;
     padding: 1px;
-    background-color: #9BACD4;
+    background-color: white;
     margin: 3vh;
 }
 
@@ -222,7 +223,7 @@ header img {
     gap: 3vh;
     width: 50%;
     position: relative;
-    box-shadow: 0px 0px 15px #9BACD4;
+    box-shadow: 0px 5px 5px #314752;
     animation: aparicion .8s ease;
     z-index: 2;
 }
@@ -235,7 +236,7 @@ header img {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #E3F0FC;
+    background-color: #405ADD;
     height: 70vh;
 }
 
@@ -248,6 +249,7 @@ header img {
     font-size: 30px;
     border: none;
     transition: 0.5s;
+    border: 2px solid white;
 }
 
 .articulos-header .agregar:active {
@@ -266,6 +268,7 @@ header img {
     justify-content: center;
     align-items: center;
     transition: 0.5s;
+    border: 2px solid white;
 }
 
 .articulos-header .borrar:active {
@@ -278,7 +281,7 @@ header img {
     align-items: center;
     flex-direction: column;
     width: 100%;
-    background-color: #C5DAED;
+    background-color: #405ADD;
 }
 
 .detalles-articulo {
@@ -292,10 +295,11 @@ header img {
 .detalles-articulo p {
     font-size: 25px;
     font-weight: bold;
+    color: white;
 }
 
 .elementos {
-    background-color: #EDEDED;
+    background-color: white;
     width: 100%;
     height: 67vh;
 }
@@ -328,9 +332,9 @@ header img {
     flex-direction: column;
     text-align: center;
     height: 70vh;
-    background-color: #E3F0FC;
+    background-color: #405ADD;
     margin-right: 2vh;
-    box-shadow: 0px 0px 10px #9BACD4;
+    box-shadow: 0px 5px 5px #314752;
     padding: 15px;
     position: absolute;
     z-index: 1;
@@ -340,6 +344,7 @@ header img {
 
 .barra-agregar h3 {
     font-size: 25px;
+    color: white;
 }
 
 .barra-agregar input {
@@ -348,14 +353,14 @@ header img {
 }
 
 .barra-agregar .producto-input, .cantidad-input, .precio-input {
-    border: 2px solid #C5DAED;
+    border: 2px solid white;
     padding: 15px;
     outline: none;
     font-size: 14px;
 }
 
 .barra-agregar textarea {
-    border: 2px solid #C5DAED;
+    border: 2px solid white;
     padding: 15px;
     font-family: Arial, Helvetica, sans-serif;
     outline: none;
@@ -384,13 +389,14 @@ header img {
 }
 
 .limpiar-btn {
-    background-color: #C5DAED;
+    background-color: #4bccb7;
     border: none;
     font-size: 20px;
     padding: 15px;
     font-weight: bold;
     border-radius: 5px;
     transition: 0.5s;
+    color: white;
 }
 
 .limpiar-btn:active {
@@ -416,7 +422,7 @@ header img {
 }
 
 .titulo-compras {
-    border-top: 4px solid #853535;
+    box-shadow: 0px 5px 5px #314752;
     width: 99%;
     padding: 15px;
     border-radius: 5px;
@@ -448,7 +454,7 @@ header img {
     display: flex;
     flex-direction: column;
     width: 60vh;
-    border-top: 4px solid #853535;
+    box-shadow: 0px 5px 5px #314752;
     padding: 15px;
     border-radius: 5px;
     background-color: white;
@@ -466,7 +472,7 @@ header img {
     width: 45vh;
     padding: 15px;
     outline: none;
-    border: 2px solid #853535;
+    border: 2px solid #161616;
     margin: 10px;
     font-size: 20px;
     border-radius: 5px;
@@ -476,7 +482,7 @@ header img {
     width: 50vh;
     padding: 15px;
     outline: none;
-    border: 2px solid #853535;
+    border: 2px solid #161616;
     margin: 10px;
     font-size: 20px;
     border-radius: 5px;
@@ -486,7 +492,7 @@ header img {
     display: flex;
     flex-direction: column;
     width: 60vh;
-    border-top: 4px solid #853535;
+    box-shadow: 0px 5px 5px #314752;
     padding: 15px;
     border-radius: 5px;
     margin-bottom: 2vh;
@@ -504,7 +510,7 @@ header img {
     width: 30vh;
     padding: 15px;
     outline: none;
-    border: 2px solid #853535;
+    border: 2px solid #161616;
     margin: 10px;
     font-size: 20px;
     border-radius: 5px;
@@ -514,7 +520,7 @@ header img {
     width: 25vh;
     padding: 15px;
     outline: none;
-    border: 2px solid #853535;
+    border: 2px solid #161616;
     margin: 10px;
     font-size: 20px;
     border-radius: 5px;
@@ -529,7 +535,7 @@ header img {
     width: 30vh;
     padding: 15px;
     outline: none;
-    border: 2px solid #853535;
+    border: 2px solid #161616;
     margin: 10px;
     font-size: 20px;
     border-radius: 5px;
@@ -539,7 +545,7 @@ header img {
     width: 30vh;
     padding: 15px;
     outline: none;
-    border: 2px solid #853535;
+    border: 2px solid #161616;
     margin: 10px;
     font-size: 20px;
     border-radius: 5px;
@@ -550,7 +556,7 @@ header img {
     align-items: center;
     gap: 8px;
     cursor: pointer;
-    border: 2px solid #853535;
+    border: 2px solid #161616;
     border-radius: 5px;
     width: 200px;
     padding: 5px;
@@ -564,7 +570,7 @@ header img {
 .iva {
     width: 15vh;
     padding: 15px;
-    border: 2px solid #853535;
+    border: 2px solid #161616;
     border-radius: 5px;
     font-size: 20px;
     margin: 10px;
@@ -579,13 +585,13 @@ header img {
     align-items: center;
     height: 20vh;
     border-radius: 5px;
-    border-top: 4px solid #853535;
+    box-shadow: 0px 5px 5px #314752;
     animation: aparicionIzquierda .8s ease;
 }
 
 .btn-agregar {
     border: none;
-    background-color: #853535;
+    background-color: #4bccb7;
     color: white;
     font-size: 20px;
     padding: 20px;
@@ -596,7 +602,7 @@ header img {
 
 .btn-limpiar {
     border: none;
-    background-color: #853535;
+    background-color: #4bccb7;
     color: white;
     font-size: 20px;
     padding: 20px;
@@ -615,7 +621,7 @@ header img {
 }
 
 .lista-compras {
-    border-top: 4px solid #853535;
+    box-shadow: 0px 5px 5px #314752;
     margin-left: 15px;
     border-radius: 5px;
     width: 170vh;
@@ -643,7 +649,6 @@ header img {
 }
 
 .nombre-cliente {
-    color: #853535;
     padding: 0;
     margin: 0;
 }
@@ -712,7 +717,7 @@ header img {
 
 .datos-compras {
     font-weight: bold;
-    border-top: 1px solid #853535;
+    border-top: 1px solid #161616;
     padding: 15px;
     font-size: 25px;
 }
@@ -729,7 +734,7 @@ header img {
 
 .opciones {
     display: flex;
-    border-top: 4px solid #853535;
+    box-shadow: 0px 5px 5px #314752;
     border-radius: 5px;
     padding: 15px;
     height: 15vh;
@@ -744,7 +749,7 @@ header img {
     position: absolute;
     left: 20px;
     border: none;
-    background-color: #853535;
+    background-color: #4bccb7;
     color: white;
     font-size: 20px;
     padding: 20px;
@@ -760,10 +765,702 @@ header img {
 
 .opciones-finales input {
     border: none;
-    background-color: #853535;
+    background-color: #4bccb7;
     color: white;
     font-size: 20px;
     padding: 20px;
     border-radius: 5px;
 }
 
+@media (max-width: 480px) {
+/*Header*/
+    header {
+        display: flex;
+        position: fixed;
+        z-index: 9999;
+        width: 100%;
+        background-color: white;
+        animation: aparicionHeader .8s ease;
+        align-items: center;
+    }
+
+    header img {
+        margin: 0;
+        width: 200px;
+        height: 30px;
+        padding: 15px;
+        cursor: pointer;
+    }
+
+    .usuario {
+        display: flex;
+        gap: 0px;
+        margin-top: 10px;
+        cursor: pointer;
+        position: absolute;
+        top: 5px;
+        right: 0;
+        margin-right: 3rem;
+    }
+
+    #nombre-usuario {
+        font-size: 18px;
+    }
+
+    /*Contenido*/
+    .contenido {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    /*Cabecera*/
+
+    .cabecera {
+        display: flex;
+        font-size: 25px;
+        margin-top: 80px;
+        width: 100%;
+        animation: aparicionCabecera .8s ease;
+    }
+
+    .cabecera p {
+        margin-left: 3vh;
+        font-weight: bold;
+        color: white;
+    }
+
+    /*Secciones*/
+
+    .secciones {
+        display: flex;
+        gap: 3vh;
+        margin-top: 2vh;
+        font-size: 20px;
+        padding: 10px;
+        border-radius: 10px;
+        font-weight: bold;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        background-color: white;
+        z-index: 0;
+        animation: aparicionSeccion .8s ease;
+    }
+
+    .seleccion-articulos .articulos-slash {
+        border-radius: 10px;
+        color: white;
+        cursor: pointer;
+        z-index: 1;
+        transition: color .3s ease;
+    }
+
+    .seleccion-articulos .compras-slash {
+        border-radius: 10px;
+        color: #000000;
+        cursor: pointer;
+        animation: color .8s ease;
+        z-index: 1;
+        transition: color .3s ease;
+    }
+
+    .seleccion-articulos .seleccion-actual {
+        position: absolute;
+        background-color: #4bccb7;
+        width: 116.26px;
+        height: 45px;
+        border-radius: 10px;
+        left: 0;
+        z-index: 1;
+        transition: left .8s ease;
+    }
+
+    .seleccion-compras .articulos-slash {
+        cursor: pointer;
+        border-radius: 10px;
+        color: #000000;
+        z-index: 1;
+        transition: color .3s ease;
+    }
+
+    .seleccion-compras .compras-slash {
+        color: white;
+        border-radius: 10px;
+        cursor: pointer;
+        animation: color .8s ease;
+        z-index: 1;
+        transition: color .3s ease;
+    }
+
+    .seleccion-compras .seleccion-actual {
+        position: absolute;
+        background-color: #4bccb7;
+        width: 116.26px;
+        height: 45px;
+        border-radius: 10px;
+        left: 12vh;
+        z-index: 1;
+        transition: left .8s ease;
+    }
+
+    .barra-separadora {
+        display: flex;
+        width: 95%;
+        padding: 1px;
+        background-color: white;
+        margin: 3vh;
+    }
+
+    /*Articulos*/
+
+    /*JS*/
+
+    .articulos-cuadro .barra-agregar {
+        display: flex;
+    }
+
+    .articulos-cuadro .articulos-lista {
+        display: flex;
+    }
+
+    .articulos-cuadro .compras-emicion {
+        display: none;
+    }
+
+    .compras-info .barra-agregar {
+        display: none;
+    }
+
+    .compras-info .articulos-lista {
+        display: none;
+    }
+
+    .compras-info .content-compras {
+        display: flex;
+    }
+
+    .content {
+        display: flex; /*Cambiarrr*/
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .articulos-lista {
+        display: flex;
+        gap: 3vh;
+        width: 95%;
+        position: relative;
+        box-shadow: 0px 5px 5px #314752;
+        animation: aparicion .8s ease;
+        z-index: 2;
+    }
+
+    .articulos-header {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #405ADD;
+        height: 63.5vh;
+    }
+
+    .articulos-header .agregar {
+        color: white;
+        background-color: #49c92a;
+        border-radius: 10px;
+        width: 40px;
+        height: 45px;
+        font-size: 30px;
+        border: none;
+        transition: 0.5s;
+        border: 2px solid white;
+    }
+
+    .articulos-header .agregar:active {
+        transform: scale(0.9);
+    }
+
+    .articulos-header .borrar {
+        border: none;
+        background-color: red;
+        width: 20px;
+        height: 25px;
+        padding: 10px;
+        border-radius: 10px;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.5s;
+        border: 2px solid white;
+    }
+
+    .articulos-header .borrar:active {
+        transform: scale(0.9);
+    }
+
+    .articulos-elemento {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        background-color: #405ADD;
+        overflow-x: auto;
+    }
+
+    .detalles-articulo {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        width: 100%;
+        text-align: center;
+        align-items: center;
+    }
+
+    .detalles-articulo p {
+        font-size: 15px;
+        font-weight: bold;
+        color: white;
+    }
+
+    .elementos {
+        background-color: white;
+        width: 100%;
+        height: 62.4vh;
+    }
+
+    .elemento {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        width: 100%;
+        text-align: center;
+        align-items: center;
+    }
+
+    .elemento p {
+        font-size: 20px;
+    }
+
+    /*Barra de agregar*/
+
+
+    .barra-ocultar .barra-agregar {
+        display: none;
+    }
+
+    .barra-agregar-oculta .barra-agregar {
+        left: 64vh;
+    }
+
+    .barra-agregar {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        height: 65vh;
+        background-color: #405ADD;
+        box-shadow: 0px 5px 5px #314752;
+        padding: 15px;
+        z-index: 10;
+        width: 70%;
+        position: absolute;
+        left: 10vh;
+        transition: left .8s ease;
+    }
+
+    .barra-agregar h3 {
+        font-size: 25px;
+        color: white;
+    }
+
+    .barra-agregar input {
+        margin: 5px;
+        border-radius: 5px;
+    }
+
+    .barra-agregar .producto-input, .cantidad-input, .precio-input {
+        border: 2px solid white;
+        padding: 15px;
+        outline: none;
+        font-size: 14px;
+    }
+
+    .barra-agregar textarea {
+        border: 2px solid white;
+        padding: 15px;
+        font-family: Arial, Helvetica, sans-serif;
+        outline: none;
+        border-radius: 5px;
+        font-size: 15px;
+        margin: 5px;
+    }
+
+    .cantidad-precio {
+        display: flex;
+    }
+
+    .agregar-btn {
+        background-color: #49c92a;
+        border: none;
+        font-size: 20px;
+        color: white;
+        padding: 15px;
+        font-weight: bold;
+        border-radius: 5px;
+        transition: 0.5s;
+    }
+
+    .agregar-btn:active {
+        transform: scale(0.9);
+    }
+
+    .limpiar-btn {
+        background-color: #4bccb7;
+        border: none;
+        font-size: 20px;
+        padding: 15px;
+        font-weight: bold;
+        border-radius: 5px;
+        transition: 0.5s;
+        color: white;
+    }
+
+    .limpiar-btn:active {
+        transform: scale(0.9);
+    }
+
+    /*Contenido*/
+    .titulo-compras {
+        margin: 10px;
+        box-shadow: 0px 5px 5px #314752;
+        width: 87%;
+        padding: 15px;
+        border-radius: 5px;
+        background-color: white;
+        animation: aparicionTitulo .8s ease;
+        font-size: 25px;
+    }
+
+    .ventanas-compras {
+        display: flex;
+        margin: 10px;
+        border-radius: 5px;
+        margin-top: 2vh;
+        flex-direction: column;
+    }
+
+    .compras-contenedor {
+        display: flex;
+        flex-direction: column;
+        width: 91%;
+    }
+
+    .datos-factura {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 15px;
+        border-radius: 5px;
+        background-color: white;
+        margin-bottom: 8px;
+        animation: aparicionIzquierda .8s ease;
+        margin-bottom: 2vh;
+        box-shadow: 0px 5px 5px #314752;
+    }
+
+    .datos-factura h3 {
+        font-size: 25px;
+        margin: 10px;
+        border-radius: 5px;
+    }
+
+    .cliente {
+        width: 30vh;
+        padding: 15px;
+        outline: none;
+        border: 2px solid #161616;
+        margin: 10px;
+        font-size: 20px;
+        border-radius: 5px;
+    }
+
+    .articulos-compra {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 15px;
+        border-radius: 5px;
+        margin-bottom: 2vh;
+        background-color: white;
+        animation: aparicionIzquierda .8s ease;
+        box-shadow: 0px 5px 5px #314752;
+    }
+
+    .articulos h3 {
+        font-size: 25px;
+        margin: 10px;
+        border-radius: 5px;
+    }
+
+    .desc-compra {
+        width: 30vh;
+        padding: 15px;
+        outline: none;
+        border: 2px solid #161616;
+        margin: 10px;
+        font-size: 20px;
+        border-radius: 5px;
+    }
+
+    .cantidad-precio {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cantidad {
+        width: 30vh;
+        padding: 15px;
+        outline: none;
+        border: 2px solid #161616;
+        margin: 10px;
+        font-size: 20px;
+        border-radius: 5px;
+    }
+
+    .precio {
+        width: 30vh;
+        padding: 15px;
+        outline: none;
+        border: 2px solid #161616;
+        margin: 10px;
+        font-size: 20px;
+        border-radius: 5px;
+    }
+
+    .descuento-exento {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .descuento {
+        width: 30vh;
+        padding: 15px;
+        outline: none;
+        border: 2px solid #161616;
+        margin: 10px;
+        font-size: 20px;
+        border-radius: 5px;
+    }
+
+    .exento {
+        width: 30vh;
+        padding: 15px;
+        outline: none;
+        border: 2px solid #161616;
+        margin: 10px;
+        font-size: 20px;
+        border-radius: 5px;
+    }
+
+    .agregar-limpiar {
+        display: flex;
+        width: 41vh;
+        margin-top: 2vh;
+        background-color: white;
+        align-items: center;
+        height: 15vh;
+        border-radius: 5px;
+        box-shadow: 0px 5px 5px #314752;
+        animation: aparicionIzquierda .8s ease;
+        margin-bottom: 4vh;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btn-agregar {
+        border: none;
+        background-color: #4bccb7;
+        color: white;
+        font-size: 20px;
+        padding: 20px;
+        border-radius: 5px;
+        width: 20vh;
+        margin: 0;
+        margin-left: 10px; 
+    }
+
+    .btn-limpiar {
+        border: none;
+        background-color: #4bccb7;
+        color: white;
+        font-size: 20px;
+        padding: 20px;
+        border-radius: 5px;
+        width: 20vh;
+        margin: 0;
+        margin-right: 10px; 
+    }
+
+    .lista-compras {
+        box-shadow: 0px 5px 5px #314752;
+        border-radius: 5px;
+        width: 100%;
+        height: 77vh;
+        overflow-y: auto;
+        background-color: white;
+        animation: aparacionDerecha .8s ease;
+        margin: 0;
+    }
+
+    .lista-compras h3{
+        font-size: 25px;
+        margin: 10px;
+        border-radius: 5px;
+    }
+
+    .descripcion {
+        display: flex;
+        gap: 5vh;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .productos {
+        display: flex;
+        border: 1px solid #bebcbc;
+        margin: 20px;
+        height: 50vh;
+        flex-direction: column;
+        overflow-x: auto;
+    }
+
+    .descripciones-compras {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        align-items: center;
+        width: 100%;
+        text-align: center;
+        gap: 20px;
+        border-bottom: 1px solid #bebcbc;
+    }
+
+    .registro-compras {
+        width: 100%;
+        overflow-y: auto;
+        height: 45vh;
+    }
+
+    .informacion-compras {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        align-items: center;
+        width: 100%;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .opciones {
+        display: flex;
+        margin: 10px;
+        box-shadow: 0px 5px 5px #314752;
+        border-radius: 5px;
+        padding: 15px;
+        height: 15vh;
+        align-items: center;
+        gap: 5vh;
+        background-color: white;
+        animation: aparacionAbajo .8s ease;
+    }
+
+    .input-opciones {
+        border: none;
+        background-color: #4bccb7;
+        color: white;
+        font-size: 20px;
+        padding: 20px;
+        border-radius: 5px;
+    }
+
+    .opciones-finales {
+        display: flex;
+        gap: 20px;
+        flex-direction: column;
+    }
+
+    .calculos {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin: 5px;
+    }
+
+    .tipo-dato {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .resultados-compras {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .datos-compras {
+        font-weight: bold;
+        border-left: 1px solid #161616;
+        border-top: 0;
+        font-size: 25px;
+    }
+
+    .radios {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+        border: 2px solid #161616;
+        border-radius: 5px;
+        width: 200px;
+        padding: 5px;
+        margin: 10px;
+    }
+
+    .ivas {
+        display: flex;
+    }
+
+    .iva {
+        width: 15vh;
+        padding: 15px;
+        border: 2px solid #161616;
+        border-radius: 5px;
+        font-size: 20px;
+        margin: 10px;
+        gap: 10px;
+        color: #bebcbc;
+    }
+
+    .cliente-info {
+        display: flex;
+        margin: 10px;
+        gap: 15px;
+    }
+
+    .cliente-info h4 {
+        font-size: 25px;
+        margin: 0;
+    }
+
+    .nombre-cliente {
+        padding: 0;
+        margin: 0;
+    }
+}

@@ -2,7 +2,7 @@
 body {
     font-family: sans-serif;
     margin: 0;
-    background-color: #EDF1F7;
+    background-color: #40A9DD;
 }
 
 /*Animación header*/
@@ -100,6 +100,7 @@ header img {
 .cabecera p {
     margin-left: 3vh;
     font-weight: bold;
+    color: white;
 }
 
 .id-usuario {
@@ -129,7 +130,7 @@ header img {
     gap: 15px;
     width: 80vh;
     background-color: white;
-    box-shadow: 0px 0px 15px #9BACD4;
+    box-shadow: 0px 9px 10px #314752;
 }
 
 .negocio label {
@@ -208,7 +209,7 @@ header img {
     width: 80vh;
     margin: 10px;
     background-color: white;
-    box-shadow: 0px 0px 15px #9BACD4;
+    box-shadow: 0px 9px 10px #314752;
 }
 
 .propietario label {
@@ -279,7 +280,7 @@ header img {
     height: 55vh;
     align-items: center;
     background-color: white;
-    box-shadow: 0px 0px 15px #9BACD4;
+    box-shadow: 0px 9px 10px #314752;
     animation: aparicionIngresosCompras .8s ease;
 }
 
@@ -326,3 +327,339 @@ header img {
     color: #CC2121;
 }
 
+/*Responsive celular*/
+@media (max-width: 480px) {
+    /*Header*/
+    header {
+        display: flex;
+        position: fixed;
+        z-index: 9999;
+        width: 100%;
+        background-color: white;
+        animation: aparicionHeader .8s ease;
+        align-items: center;
+    }
+
+    header img {
+        margin: 0;
+        width: 200px;
+        height: 30px;
+        padding: 15px;
+        cursor: pointer;
+    }
+
+    .usuario {
+        display: flex;
+        gap: 0px;
+        margin-top: 10px;
+        cursor: pointer;
+        position: absolute;
+        top: 5px;
+        right: 0;
+        margin-right: 3rem;
+    }
+
+    #nombre-usuario {
+        font-size: 18px;
+    }
+
+    /*Contenido*/
+
+    .contenido {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .opciones {
+        display: flex;
+        flex-direction: column;
+        border-right: 1px solid #bebcbc;
+    }
+
+    .opciones-forma {
+        display: flex;
+        font-size: 35px;
+        border: 2px solid black;
+        padding: 10px;
+        margin: 10px;
+        cursor: pointer;
+        border-radius: 5px;
+        width: 300px;
+        justify-content: center;
+        align-items: center;
+        height: 60px;
+    }
+
+    .opciones-forma:hover {
+        background-color: #666;
+    }
+
+    .cabecera {
+        display: flex;
+        font-size: 25px;
+        margin-top: 80px;
+        width: 100%;
+        animation: aparicionCabecera .8s ease;
+    }
+
+    .cabecera p {
+        margin-left: 3vh;
+        font-weight: bold;
+        color: white;
+    }
+
+    .id-usuario {
+        font-size: 29px;
+        margin-bottom: 5px;
+        color: #1234B0;
+    }
+
+    .tarjetas-info {
+        display: flex;
+        gap: 0px;
+        animation: aparicionTarjetas .8s ease;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .informacion {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .negocio {
+        display: flex;
+        margin: 10px;
+        gap: 15px;
+        width: 21vh;
+        background-color: white;
+        box-shadow: 0px 9px 10px #314752;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .negocio label {
+        display: flex;
+        background-color: #b1adad;
+        width: 60%;
+        height: 60%;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border-radius: 100%;
+        margin: 10px;
+        margin-left: 4vh;
+    }
+
+    .negocio label:hover {
+        background-color: #818181;
+    }
+
+    .info-negocio {
+        width: 100%;
+    }
+
+    .info-negocio h1 {
+        font-size: 25px;
+        text-align: center;
+        margin: 5px;
+    }
+
+    .imagen-defecto1 {
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+    }
+
+    .imagen-defecto2:hover {
+        filter: brightness(70%);
+        cursor: pointer;
+    }
+
+    .imagen-defecto2 {
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+    }
+
+    .imagen-defecto1:hover {
+        filter: brightness(70%);
+        cursor: pointer;
+    }
+
+    .titulo-nombre-negocio {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        border-bottom: 1px solid #a8a8a8;
+        width: 100%;
+    }
+
+    .titulo-nombre-negocio h2{
+        color: #7B7E85;
+        margin: 3px;
+        font-size: 20px;
+    }
+
+    .titulo-sucursal-negocio {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        border-bottom: 1px solid #a8a8a8;
+    }
+
+    .titulo-sucursal-negocio h2{
+        color: #7B7E85;
+        margin: 3px;
+        font-size: 20px;
+    }
+
+    .titulo-terminal-negocio {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        border-bottom: 1px solid #a8a8a8;
+    }
+
+    .titulo-terminal-negocio h2{
+        color: #7B7E85;
+        margin: 3px;
+        font-size: 20px;
+    }
+
+    .propietario {
+        display: flex;
+        gap: 15px;
+        width: 21vh;
+        margin: 10px;
+        background-color: white;
+        box-shadow: 0px 9px 10px #314752;
+        flex-direction: column;
+    }
+
+    .propietario label {
+        display: flex;
+        background-color: #b1adad;
+        width: 60%;
+        height: 60%;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100%;
+        margin: 10px;
+        margin-left: 4vh;
+    }
+
+    .propietario label:hover {
+        background-color: #818181;
+    }
+
+    .info-propietario h1 {
+        font-size: 25px;
+        text-align: center;
+        margin: 5px;
+    }
+
+    .titulo-nombre-propietario {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        border-bottom: 1px solid #a8a8a8;
+        width: 100%;
+    }
+
+    .titulo-nombre-propietario h2{
+        color: #7B7E85;
+        margin: 3px;
+        font-size: 20px;
+    }
+
+    .titulo-perfil-propietario {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        border-bottom: 1px solid #a8a8a8;
+        width: 100%;
+    }
+
+    .titulo-perfil-propietario h2{
+        color: #7B7E85;
+        margin: 3px;
+        font-size: 20px;
+    }
+
+    .titulo-plan-propietario {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        border-bottom: 1px solid #a8a8a8;
+        width: 100%;
+    }
+
+    .titulo-plan-propietario h2{
+        color: #7B7E85;
+        margin: 3px;
+        font-size: 20px;
+    }
+
+    .ingresos-compras {
+        display: flex;
+        width: 44vh;
+        margin: 10px;
+        height: 30vh;
+        align-items: center;
+        background-color: white;
+        box-shadow: 0px 9px 10px #314752;
+        animation: aparicionIngresosCompras .8s ease;
+    }
+
+    .ingresos {
+        display: flex;
+        flex-direction: column;
+        width: 30vh;
+        border-right: 1px solid #a8a8a8;
+    }
+
+    .ingresos h2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 25px;
+    }
+
+    .ingresos-id svg {
+        color: #2AD42E;
+        width: 45px;
+        height: 45px;
+    }
+
+    .cant-ingresos {
+        color: #2AD42E;
+    }
+
+    .compras {
+        display: flex;
+        flex-direction: column;
+        width: 30vh;
+    }
+
+    .compras h2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 25px;
+    }
+
+    .compras-id svg {
+        color: #CC2121;
+        width: 45px;
+        height: 45px;
+    }
+
+    .cant-compras {
+        color: #CC2121;
+    }
+}

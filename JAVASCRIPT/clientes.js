@@ -40,12 +40,6 @@ agregar_input.addEventListener("click", (e) => {
         p.textContent = datos[i];
         cliente_regis.appendChild(p);
     }
-    
-    if (j % 2 == 0) {
-        cliente_regis.classList.add("color-azul");
-    } else {
-        cliente_regis.style.backgroundColor = "#EDEDED";
-    }
 
     clientes_registrados.appendChild(cliente_regis);
 

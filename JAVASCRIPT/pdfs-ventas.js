@@ -1,157 +1,164 @@
 const { jsPDF } = window.jspdf;
 
 const btnTotalizar = document.querySelector(".btn-totalizar");
-const img = document.getElementById("logo");
 
 btnTotalizar.addEventListener("click", () => {
 
     const doc = new jsPDF();
+    const img = new Image();
 
-    let datosProv = JSON.parse(localStorage.getItem("usuario"));
+    img.src = "../IMAGENES/contadores.png";
 
-    const nombre = datosProv.nombreLocal;
-    const apellidos = datosProv.apellidosLocal;
-    const correo = datosProv.correoLocal;
-    const cedula = datosProv.cedulaLocal;
+    img.onload = function () {
 
-    // ALTURA DEL HEADER
-    const headerHeight = 40;
+        let datosProv = JSON.parse(localStorage.getItem("usuario"));
 
-    // POSICIÓN DONDE EMPIEZA EL CONTENIDO
+        const nombre = datosProv.nombreLocal;
+        const apellidos = datosProv.apellidosLocal;
+        const correo = datosProv.correoLocal;
+        const cedula = datosProv.cedulaLocal;
 
-    // ======================
-    // HEADER
-    // ======================
+        // ALTURA DEL HEADER
+        const headerHeight = 40;
 
-    // Color azul
-    doc.setFillColor(39, 87, 245);
+        // POSICIÓN DONDE EMPIEZA EL CONTENIDO
 
-    // Rectángulo del header
-    doc.rect(
-        0,
-        0,
-        doc.internal.pageSize.getWidth(),
-        headerHeight,
-        "F"
-    );
+        // ======================
+        // HEADER
+        // ======================
 
-    // ======================
-    // TEXTO DEL HEADER
-    // ======================
+        // Color azul
+        doc.setFillColor(39, 87, 245);
 
-    // Color blanco
-    doc.setTextColor(255, 255, 255);
+        // Rectángulo del header
+        doc.rect(
+            0,
+            0,
+            doc.internal.pageSize.getWidth(),
+            headerHeight,
+            "F"
+        );
 
-    // Fuente grande
-    doc.setFontSize(15);
+        // ======================
+        // TEXTO DEL HEADER
+        // ======================
 
-    // Negrita
-    doc.setFont("helvetica", "bold");
+        doc.addImage(img, "PNG", 10, 5, 40, 30);
 
-    // Texto dentro del header
-    doc.text(`${nombre} ${apellidos}`, 60, 10);
+        // Color blanco
+        doc.setTextColor(255, 255, 255);
 
-    doc.setFont("helvetica", "bold");
-    doc.setTextColor(255, 255, 255);
-    doc.text("CONTADOR", 60, 20);
-    doc.text(`Cédula: ${cedula}`, 60, 30);
+        // Fuente grande
+        doc.setFontSize(15);
 
-    doc.setFontSize(12);
+        // Negrita
+        doc.setFont("helvetica", "bold");
 
-    doc.setFont("helvetica", "bold");
-    doc.setTextColor(255, 255, 255);
-    doc.setFontSize(12);
-    doc.text(`Teléfono:`, 135, 10);
-    doc.text(`Correo: ${correo}`, 135, 20);
-    doc.text("Dirección:", 135, 30);
-    
-    //Contenido
-    doc.setFontSize(14);
-    doc.setFont("helvetica", "normal");
-    doc.setTextColor(0, 0, 0);
-    doc.text(`Cliente:`, 10, 50);
-    doc.text(`Cédula:`, 10, 60);
-    doc.text(`Teléfono:`, 10, 67);
-    doc.text(`Correo:`, 10, 74);
-    doc.text(`Dirección:`, 10, 84);
-    doc.text(`Condición de venta:`, 110, 60);
-    doc.text(`Medio de pago:`, 110, 74);
+        // Texto dentro del header
+        doc.text(`${nombre} ${apellidos}`, 60, 10);
 
-    //Bordes
-    doc.setFillColor(39, 87, 245);
+        doc.setFont("helvetica", "bold");
+        doc.setTextColor(255, 255, 255);
+        doc.text("CONTADOR", 60, 20);
+        doc.text(`Cédula: ${cedula}`, 60, 30);
 
-    doc.rect(
-        0,
-        89,
-        doc.internal.pageSize.getWidth(),
-        1,
-        "F"
-    );
+        doc.setFontSize(12);
 
-    //Subtitulo
-    const pagewidth = doc.internal.pageSize.getWidth();
-    const midpage = pagewidth / 2;
+        doc.setFont("helvetica", "bold");
+        doc.setTextColor(255, 255, 255);
+        doc.setFontSize(12);
+        doc.text(`Teléfono:`, 135, 10);
+        doc.text(`Correo: ${correo}`, 135, 20);
+        doc.text("Dirección:", 135, 30);
+        
+        //Contenido
+        doc.setFontSize(14);
+        doc.setFont("helvetica", "normal");
+        doc.setTextColor(0, 0, 0);
+        doc.text(`Cliente:`, 10, 50);
+        doc.text(`Cédula:`, 10, 60);
+        doc.text(`Teléfono:`, 10, 67);
+        doc.text(`Correo:`, 10, 74);
+        doc.text(`Dirección:`, 10, 84);
+        doc.text(`Condición de venta:`, 110, 60);
+        doc.text(`Medio de pago:`, 110, 74);
 
-    doc.setFontSize(30);
-    doc.setFont("helvetica", "bold");
-    doc.setTextColor(0, 0, 0);
-    doc.text('DETALLE', midpage - 22, 100);
+        //Bordes
+        doc.setFillColor(39, 87, 245);
 
-    //Bordes
-    doc.setFillColor(39, 87, 245);
+        doc.rect(
+            0,
+            89,
+            doc.internal.pageSize.getWidth(),
+            1,
+            "F"
+        );
 
-    doc.rect(
-        0,
-        103,
-        doc.internal.pageSize.getWidth(),
-        1,
-        "F"
-    );
+        //Subtitulo
+        const pagewidth = doc.internal.pageSize.getWidth();
+        const midpage = pagewidth / 2;
 
-    //Descripciones
-    doc.setFontSize(12);
-    doc.setFont("helvetica", "normal");
-    doc.setTextColor(0, 0, 0);
-    doc.text('CODIGO', 8, 113);
-    doc.text('CANTIDAD', 29, 113);
-    doc.text('DESCRIPCIÓN', 54, 113);
-    doc.text(' PRECIO\nUNITARIO', 88, 111);
-    doc.text('DESCUENTO', 114, 113);
-    doc.text('SUBTOTAL', 146, 113);
-    doc.text('   MONTO\nIMPUESTOS', 174, 111);
+        doc.setFontSize(30);
+        doc.setFont("helvetica", "bold");
+        doc.setTextColor(0, 0, 0);
+        doc.text('DETALLE', midpage - 22, 100);
 
-    //Borde
-    doc.setFillColor(39, 87, 245);
+        //Bordes
+        doc.setFillColor(39, 87, 245);
 
-    doc.rect(
-        0,
-        120,
-        doc.internal.pageSize.getWidth(),
-        1,
-        "F"
-    );   
+        doc.rect(
+            0,
+            103,
+            doc.internal.pageSize.getWidth(),
+            1,
+            "F"
+        );
 
-    //Montos
-    doc.setFontSize(12);
-    doc.setFont("helvetica", "bold");
-    doc.setTextColor(0, 0, 0);
-    doc.text(`Subtotal Neto:`, 135, 161);
-    doc.text(`Total IVA 13%:`, 135, 167);
-    doc.text(`Total IVA 1%:`, 135, 173);
-    doc.text(`Total IVA 2%:`, 135, 179);
-    doc.text(`Total exonerado:`, 135, 185);
-    doc.text(`Total Factura:`, 135, 191);
+        //Descripciones
+        doc.setFontSize(12);
+        doc.setFont("helvetica", "normal");
+        doc.setTextColor(0, 0, 0);
+        doc.text('CODIGO', 8, 113);
+        doc.text('CANTIDAD', 29, 113);
+        doc.text('DESCRIPCIÓN', 54, 113);
+        doc.text(' PRECIO\nUNITARIO', 88, 111);
+        doc.text('DESCUENTO', 114, 113);
+        doc.text('SUBTOTAL', 146, 113);
+        doc.text('   MONTO\nIMPUESTOS', 174, 111);
 
-    //Nota
-    doc.text(`Nota:`, 10, 161);
+        //Borde
+        doc.setFillColor(39, 87, 245);
 
-    //Datos extra
-    doc.text(`Factura N°:`, 10, 240);
-    doc.text(`Codigo:`, 10, 247);
-    
-    doc.text(`Fecha de emisión:`, 130, 240);
-    doc.text(`Hora:`, 130, 247);
+        doc.rect(
+            0,
+            120,
+            doc.internal.pageSize.getWidth(),
+            1,
+            "F"
+        );   
 
-    // Abrir PDF
-    window.open(doc.output("bloburl"));
+        //Montos
+        doc.setFontSize(12);
+        doc.setFont("helvetica", "bold");
+        doc.setTextColor(0, 0, 0);
+        doc.text(`Subtotal Neto:`, 135, 161);
+        doc.text(`Total IVA 13%:`, 135, 167);
+        doc.text(`Total IVA 1%:`, 135, 173);
+        doc.text(`Total IVA 2%:`, 135, 179);
+        doc.text(`Total exonerado:`, 135, 185);
+        doc.text(`Total Factura:`, 135, 191);
+
+        //Nota
+        doc.text(`Nota:`, 10, 161);
+
+        //Datos extra
+        doc.text(`Factura N°:`, 10, 240);
+        doc.text(`Codigo:`, 10, 247);
+        
+        doc.text(`Fecha de emisión:`, 130, 240);
+        doc.text(`Hora:`, 130, 247);
+
+        // Abrir PDF
+        window.open(doc.output("bloburl"));
+    };
 });

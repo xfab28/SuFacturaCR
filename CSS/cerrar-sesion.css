@@ -87,3 +87,84 @@
     background: rgba(0,0,0,0.5); 
     display: none; 
 }
+
+/*Responsive celular*/
+@media (max-width: 480px) {
+    .overlay {
+        z-index: 9999;
+    }
+
+    .confirmar {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 35vh;
+        height: 20vh;
+        border: 1px solid #D6D6D6;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        animation: aparecerModal 0.3s ease;
+        text-align: center;
+    }
+
+    .confirmar h3 {
+        font-size: 20px;
+    }
+
+    .botones {
+        display: flex;
+        gap: 20px;
+    }
+
+    .aceptar {
+        padding: 15px;
+        border: none;
+        outline: none;
+        color: white;
+        font-size: 20px;
+        background-color: #2AD42E;
+        border-radius: 10px;
+        transition: 1s;
+    }
+
+    .cancelar {
+        padding: 15px;
+        border: none;
+        outline: none;
+        color: white;
+        font-size: 20px;
+        background-color: red;
+        border-radius: 10px;
+        transition: 1s;
+    }
+
+    .aceptar:hover {
+        background-color: #015703;
+    }
+
+    .cancelar:hover {
+        background-color: #530606;
+    }
+
+    .aceptar:active {
+        transform: scale(0.9);
+    }
+
+    .cancelar:active {
+        transform: scaleX(0.9);
+    }
+
+    .overlay{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5); 
+        display: none; 
+    }
+}

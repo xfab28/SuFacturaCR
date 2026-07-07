@@ -19,6 +19,30 @@ function crear_tablas() {
             contrasenia TEXT NOT NULL
         )
     `);
+    db.exec(`
+        CREATE TABLE IF NOT EXISTS facturas_aprobadas (
+            id              INTEGER PRIMARY KEY AUTOINCREMENT,
+            cliente         TEXT NOT NULL,
+            descripcion     TEXT NOT NULL,
+            tipo_iva        TEXT NOT NULL,
+            cant_impuestos  INTEGER,
+            monto           INTEGER,
+            fecha           TEXT NOT NULL,
+            hora            TEXT NOT NULL
+        )
+    `);
+    db.exec(`
+        CREATE TABLE IF NOT EXISTS facturas_temporales (
+            id              INTEGER PRIMARY KEY AUTOINCREMENT,
+            cliente         TEXT NOT NULL,
+            descripcion     TEXT NOT NULL,
+            tipo_iva        TEXT NOT NULL,
+            cant_impuestos  INTEGER,
+            monto           INTEGER,
+            fecha           TEXT NOT NULL,
+            hora            TEXT NOT NULL
+        )
+    `);
     console.log('Tabla creada');
 }
 
@@ -30,6 +54,13 @@ function insertarDatos(nombre, apellidos, cedula, correo, contrasenia) {
         VALUES (?, ?, ?, ?, ?)    
     `);
     insertar.run(nombre, apellidos, cedula, correo, contrasenia);
+}
+
+function borrarTodo() {
+    const db = conectar();
+    db.exec(`
+        DELETE FROM usuarios
+    `);
 }
 
 //Exportar funciones
