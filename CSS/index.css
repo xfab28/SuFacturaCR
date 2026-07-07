@@ -371,7 +371,7 @@ body {
         width: 350px;
         height: 50px;
         position: relative;
-        top: 19vh;
+        top: 16vh;
     }
 
     /*Div general*/
@@ -385,7 +385,7 @@ body {
         width: 40vh;
         position: fixed;
         top: 25%;
-        height: 55vh;
+        height: 60vh;
         border-radius: 3vh;
         background-color: white;
         border: none;
@@ -425,10 +425,10 @@ body {
     }
 
     .input-form-registro {
-        padding: 15px;
+        padding: 14px;
         width: 25vh;
         border: none;
-        font-size: 17px;
+        font-size: 15px;
         outline: none;
         background-color: #F0F0F0;
     }
@@ -440,7 +440,7 @@ body {
         width: 15vh;
         border: none;
         color: white;
-        font-size: 1.5vh;
+        font-size: 2vh;
         border-radius: 5vh;
         font-weight: bold;
         transition: 0.5s;
@@ -495,7 +495,7 @@ body {
         width: 15vh;
         border: none;
         color: white;
-        font-size: 1.5vh;
+        font-size: 1.8vh;
         border-radius: 5vh;
         font-weight: bold;   
         transition: 0.5s;
