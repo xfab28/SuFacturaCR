@@ -13,7 +13,7 @@ body {
     width: 350px;
     height: 50px;
     position: relative;
-    top: 21vh;
+    top: 20vh;
 }
 
 /*Div general*/
@@ -23,13 +23,14 @@ body {
     align-items: center;
     justify-content: center;
     gap: 20vh;
-    border: 3px solid #D4D4D4;
+    border: none;
     width: 100vh;
     position: fixed;
     top: 25%;
     height: 55vh;
     border-radius: 3vh;
     background-color: white;
+    box-shadow: 0px 5px 5px #314752;
 }
 
 /*Registro*/
@@ -77,7 +78,7 @@ body {
 .btn-registro {
     margin-top: 20px;
     padding: 15px;
-    background-color: #284D8F;
+    background-color: #405ADD;
     width: 15vh;
     border: none;
     color: white;
@@ -88,7 +89,7 @@ body {
 }
 
 .btn-registro:hover {
-    background-color: #4a72b8;
+    background-color: #3346a3;
 }
 
 .btn-registro:active {
@@ -141,7 +142,7 @@ body {
 .btn-inicio {
     margin-top: 20px;
     padding: 15px;
-    background-color: #284D8F;
+    background-color: #405ADD;
     width: 15vh;
     border: none;
     color: white;
@@ -152,7 +153,7 @@ body {
 }
 
 .btn-inicio:hover {
-    background-color: #4a72b8;
+    background-color: #3346a3;
 }
 
 .btn-inicio:active {
@@ -355,4 +356,365 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.direccionamiento-regis {
+    display: none;
+}
+
+.direccionamiento-inicio {
+    display: none;
+}
+
+@media (max-width: 480px) {
+    .logo {
+        width: 350px;
+        height: 50px;
+        position: relative;
+        top: 19vh;
+    }
+
+    /*Div general*/
+    .registro-inicio {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20vh;
+        box-shadow: 0px 5px 5px #314752;
+        width: 40vh;
+        position: fixed;
+        top: 25%;
+        height: 55vh;
+        border-radius: 3vh;
+        background-color: white;
+        border: none;
+    }
+
+    .registro-animacion {
+        animation: EntrarDerecha .8s ease;
+    }
+
+    @keyframes aparicionOpaca {
+        from {
+            opacity: 0;
+        } 
+        to {
+            opacity: 1;
+        }
+    }
+
+    .registro {
+        display: none;
+        text-align: center;
+        flex-direction: column;
+        animation: aparicionOpaca .8s ease;
+    }
+
+    .registro h3 {
+        font-size: 3vh;
+        margin: 0;
+    }
+
+    .registro form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+
+    .input-form-registro {
+        padding: 15px;
+        width: 25vh;
+        border: none;
+        font-size: 17px;
+        outline: none;
+        background-color: #F0F0F0;
+    }
+
+    .btn-registro {
+        margin-top: 10px;
+        padding: 15px;
+        background-color: #405ADD;
+        width: 15vh;
+        border: none;
+        color: white;
+        font-size: 1.5vh;
+        border-radius: 5vh;
+        font-weight: bold;
+        transition: 0.5s;
+    }
+
+    .btn-registro:hover {
+        background-color: #3346a3;
+    }
+
+    .btn-registro:active {
+        transform: scale(0.9);
+    }
+
+    .registro .ir-registro {
+        display: none;
+    }
+
+    .inicio-sesion-animacion {
+        animation: EntrarIzquierda .8s ease;
+    }
+
+    .inicio-sesion {
+        text-align: center;
+        animation: aparicionOpaca .8s ease;
+    }
+
+    .inicio-sesion h3{
+        font-size: 3vh;
+    }
+
+    .inicio-sesion form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .input-form {
+        padding: 20px;
+        width: 30vh;
+        border: none;
+        font-size: 20px;
+        outline: none;
+        background-color: #F0F0F0;
+        margin: 10px;
+    }
+
+    .btn-inicio {
+        margin-top: 20px;
+        padding: 15px;
+        background-color: #405ADD;
+        width: 15vh;
+        border: none;
+        color: white;
+        font-size: 1.5vh;
+        border-radius: 5vh;
+        font-weight: bold;   
+        transition: 0.5s;
+    }
+
+    .btn-inicio:hover {
+        background-color: #3346a3;
+    }
+
+    .btn-inicio:active {
+        transform: scale(0.9);
+    }
+
+    /*Mensajes alerta de registro*/
+    .mensaje-alerta {
+        font-size: 1.5vh;
+        font-weight: bold;
+    }
+
+    .mensaje-alerta-rojo {
+        color: red;
+    }
+
+    .mensaje-alerta-verde {
+        color: #24C735;
+    }
+
+    /*Mensajes alertas de inicio de sesión*/
+    .mensaje-alerta-inicio {
+        font-size: 1.5vh;
+        font-weight: bold;
+    }
+
+    .mensaje-alerta-rojo-inicio {
+        color: red;
+    }
+
+    .mensaje-alerta-verde-inicio {
+        color: #24C735;
+    }
+
+    .ir-registro-animacion {
+        animation: AparecerIzquierda 0.5s ease;
+    }
+
+    .ir-inicio-animacion {
+        animation: AparecerDerecha 0.5s ease;
+    }
+
+    .desactivado{
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        border-radius: 3vh;
+        height: 100%;
+        width: 50%;
+        background: #239ccc;
+        background: linear-gradient(90deg,rgba(35, 156, 204, 1) 22%, rgba(31, 112, 184, 1) 32%, rgba(75, 188, 219, 1) 88%);
+    }
+
+    .desactivado-registro {
+        border-top-right-radius: 10vh;
+        border-bottom-right-radius: 10vh;
+        border-top-left-radius: 3vh;
+        border-bottom-left-radius: 3vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        text-align: center;
+        transition: left 0.5s ease;
+    }
+
+    .desactivado-registro .ir-inicio {
+        display: none;
+    }
+
+    .desactivado-registro h2 {
+        font-weight: bold;
+        font-size: 2.5vh;
+        margin: 0;
+    }
+
+    .desactivado-registro p {
+        font-size: 20px;
+    }
+
+    .desactivado-registro input {
+        border-radius: 5px;
+        background: none;
+        border: 3px solid white;
+        padding: 13px;
+        width: 20vh;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .desactivado-registro input:hover {
+        background-color: #d8d8d8;
+    }
+
+    .desactivado-registro input:active {
+        transition: 0.3s;
+    }
+
+    .desactivado-registro h3{
+        display: none;
+    }
+
+    .desactivado-registro form{
+        display: none;
+    }
+
+    .desactivado-registro .ir-registro {
+        display: flex;
+        animation: AparecerIzquierda 0.5s ease;
+    }
+
+    .ir-registro {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .desactivado-inicio {
+        border-top-right-radius: 3vh;
+        border-bottom-right-radius: 3vh;
+        border-top-left-radius: 10vh;
+        border-bottom-left-radius: 10vh;
+        position: absolute;
+        top: 0;
+        left: 50vh;
+        transition: left 0.5s ease;
+    }
+
+    .desactivado-inicio h2 {
+        font-weight: bold;
+        font-size: 2.5vh;
+        margin: 0;
+    }
+
+    .desactivado-inicio p {
+        font-size: 20px;
+    }
+
+    .desactivado-inicio input {
+        border-radius: 5px;
+        background: none;
+        border: 3px solid white;
+        padding: 13px;
+        width: 20vh;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .desactivado-inicio input:hover {
+        background-color: #d8d8d8;
+    }
+
+    .desactivado-inicio input:active {
+        transition: 0.3s;
+    }
+
+    .desactivado-inicio h3{
+        display: none;
+    }
+
+    .desactivado-inicio form{
+        display: none;
+    }
+
+    .desactivado-inicio .ir-registro {
+        display: none;
+    }
+
+    .desactivado-inicio .ir-inicio {
+        display: flex;
+    }
+
+    .ir-inicio {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .direccionamiento-regis {
+        display: flex;
+        margin: 10px;
+        text-decoration: none;
+        color: #405ADD;
+    }
+
+    .direccionamiento-regis:hover {
+        color: #284D8F;
+    }
+
+    .desaparecer-formulario {
+        display: none;
+    }
+
+    .aparecer-formulario {
+        display: flex;
+    }
+
+    .direccionamiento-inicio {
+        display: flex;
+        margin: 10px;
+        text-decoration: none;
+        color: #405ADD;
+    }
+
+    .direccionamiento-inicio:hover {
+        color: #284D8F;
+    }
 }

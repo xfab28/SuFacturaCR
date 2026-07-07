@@ -54,6 +54,7 @@
     display: flex;
 }
 
+/*Responsive celular*/
 @media (max-width: 480px) {
     .menu-container {
         height: 100%;

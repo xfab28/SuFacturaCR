@@ -44,3 +44,34 @@ body {
         width: 100%;
     }
 }
+
+@media (max-width: 480px) {
+    .carga {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /*Tamaño imagen*/
+    .img-carga {
+        width: 40vh;
+        height: 40vh;
+        margin: 0;
+    }
+
+    .barra-carga {
+        border: 1px solid #2780F5;
+        width: 300px;
+        height: 15px;
+        border-radius: 20px;
+    }
+
+    /*Animacion*/
+    .carga .barra-carga .proceso-carga {
+        height: 15px;
+        border-radius: 20px;
+        background: #2780F5;
+        animation: carga 2s forwards cubic-bezier(0,0,0,0);
+    }
+}
