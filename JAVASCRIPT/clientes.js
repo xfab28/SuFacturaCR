@@ -19,30 +19,74 @@ const telefono_cliente = document.querySelector(".telefono-cliente");
 const agregar_input = document.querySelector(".agregar-input");
 const limpiar_input = document.querySelector(".limpiar-input");
 
+//formulario
+const formulario = document.querySelector(".form-clientes");
+
+//funcion
+function cargarClientes() {
+    clientes_registrados.innerHTML = "";
+
+    fetch("/contactos") 
+    .then(res => res.json())
+    .then(clientes => {
+        clientes.forEach(cliente => {
+            const cliente_regis = document.createElement("div");
+            cliente_regis.classList.add("cliente-regis");
+
+            let datos = [cliente.id, cliente.contacto, cliente.empresa, cliente.cedula, cliente.correo, cliente.telefono];
+
+            for (let i = 0; i < datos.length; i++) {
+                const p = document.createElement("p");
+                p.textContent = datos[i];
+                cliente_regis.appendChild(p);
+            }
+
+            clientes_registrados.appendChild(cliente_regis);
+        });
+    });
+    
+}
+
 //Eventos
+window.addEventListener("DOMContentLoaded", () => {
+    cargarClientes();
+});
 
 //Agregar clientes
-let j = 0;
-agregar_input.addEventListener("click", (e) => {
+formulario.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const cliente_regis = document.createElement("div");
-    cliente_regis.classList.add("cliente-regis");
+    const contacto = contacto_cliente.value;
+    const empresa = empresa_cliente.value;
+    const cedula = cedula_cliente.value;
+    const correo = correo_cliente.value;
+    const telefono = telefono_cliente.value;
 
-    j++;
+    try {
+        const respuesta = await fetch("/contactos", {
+            method: 'POST',
 
-    cliente_regis.dataset.indice = j;
+            headers: {
+                'Content-Type': 'application/json'
+            },
 
-    let datos = [j, contacto_cliente.value, empresa_cliente.value, cedula_cliente.value, correo_cliente.value, telefono_cliente.value];
-    
-    for (let i = 0; i < datos.length; i++) {
-        const p = document.createElement("p");
-        p.textContent = datos[i];
-        cliente_regis.appendChild(p);
+            body: JSON.stringify({
+                contacto,
+                empresa,
+                cedula,
+                correo,
+                telefono
+            })
+        });
+
+        if (respuesta.ok) {
+            cargarClientes();
+        } else {
+            alert("Error al ingresar cliente");
+        }
+    } catch (error) {
+        alert("Error del servidor");
     }
-
-    clientes_registrados.appendChild(cliente_regis);
-
 });
 
 //Limpiar campos
@@ -69,22 +113,39 @@ document.addEventListener("keyup", (e) => {
 });
 
 //Eliminar cliente
-let clienteSelec = null;
+async function eliminarCliente(id) {
+    const respuesta = await fetch(`/contactos/${id}`, {
+        method: "DELETE"
+    });
+
+    if (respuesta.ok) {
+        cargarClientes();
+        mensaje_seleccionado.textContent = "";
+    } else {
+        console.log(respuesta.status);
+        alert("Error al borrar");
+    }
+}
+
+let id = 0;
 
 clientes_registrados.addEventListener("click", (e) => {
 
     const cliente = e.target.closest(".cliente-regis");
 
-    if (cliente) {
-        mensaje_seleccionado.textContent = `Cliente seleccionado: ${cliente.dataset.indice}`;
-        clienteSelec = cliente;
-    }
+    if (!cliente) return;
+    
+    mensaje_seleccionado.textContent = `Cliente seleccionado: ${cliente.children[0].textContent}`;
+    
+
+    id = cliente.children[0].textContent;
 });
 
 borrar_cliente.addEventListener("click", () => {
-    if (clienteSelec) {
-        mensaje_seleccionado.textContent = "";
-        clienteSelec.remove();
-        clienteSelec = null;
+    if (!id) {
+        alert("Seleccione un cliente")
+        return;
     }
+
+    eliminarCliente(id);
 });

@@ -113,14 +113,16 @@
             <div class="barra-agregar">
                 <h3>Agregar productos</h3>
 
-                <input type="text" name="producto" class="producto-input" placeholder="Producto">
-                <div class="cantidad-precio">
-                    <input type="number" name="cantidad" class="cantidad-input" placeholder="Cantidad">
-                    <input type="number" name="precio" class="precio-input" placeholder="Precio">
-                </div>
-                <textarea name="descripcion" class="descripcion-input" placeholder="Descripción" rows="2"></textarea>
-                <input type="submit" class="agregar-btn" value="Agregar">
-                <input type="submit" class="limpiar-btn" value="Limpiar">
+                <form action="/productos" method="post" class="form-productos">
+                    <input type="text" name="producto" class="producto-input" placeholder="Producto">
+                    <div class="cantidad-precio">
+                        <input type="number" name="cantidad" class="cantidad-input" placeholder="Cantidad">
+                        <input type="number" name="precio" class="precio-input" placeholder="Precio">
+                    </div>
+                    <textarea name="descripcion" class="descripcion-input" placeholder="Descripción" rows="2"></textarea>
+                    <input type="submit" class="agregar-btn" value="Agregar">
+                    <input type="reset" class="limpiar-btn" value="Limpiar">
+                </form>
             </div>
 
             <div class="articulos-lista">

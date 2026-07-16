@@ -342,6 +342,11 @@ header img {
     transition: left .8s ease;
 }
 
+.barra-agregar form {
+    display: flex;
+    flex-direction: column;
+}
+
 .barra-agregar h3 {
     font-size: 25px;
     color: white;

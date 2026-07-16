@@ -3,6 +3,7 @@ const articulos = document.querySelector('.articulos-slash');
 const compras = document.querySelector('.compras-slash');
 const content = document.querySelector('.content');
 const agregar = document.querySelector('.agregar');
+const borrar = document.querySelector('.borrar');
 const elementos = document.querySelector('.elementos');
 
 const productoInput = document.querySelector(".producto-input");
@@ -11,6 +12,40 @@ const precioInput = document.querySelector(".precio-input");
 const descripcionInput = document.querySelector(".descripcion-input"); 
 const agregarBtn = document.querySelector(".agregar-btn");
 const limpiarBtn = document.querySelector(".limpiar-btn");
+
+const formulario = document.querySelector(".form-productos");
+
+function cargarProductos() {
+    elementos.innerHTML = "";
+
+    fetch("/productos")
+    .then(res => res.json())
+    .then(productos => {
+        productos.forEach(producto => {
+            
+            const elemento = document.createElement("div");
+            elemento.classList.add("elemento");
+
+            let indice = producto.id;
+            elemento.dataset.id = indice;
+
+            let lista_datos = [producto.producto, producto.cantidad, producto.precio, producto.descripcion];
+
+            for (let i = 0; i < lista_datos.length; i++) {
+                const p = document.createElement("p");
+                p.textContent = lista_datos[i];
+                elemento.appendChild(p);
+            }
+
+            elementos.appendChild(elemento);
+
+        });
+    });
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+    cargarProductos();
+});
 
 function quitarDisplay(tiempo) {
     setTimeout(() => {
@@ -46,28 +81,38 @@ agregar.addEventListener("click", () => {
 });
 
 //Agregar productos
-agregarBtn.addEventListener("click", () => {
-    const elemento = document.createElement("div");
-    const p_producto = document.createElement("p");
-    const p_cantidad = document.createElement("p");
-    const p_precio = document.createElement("p");
-    const p_descripcion = document.createElement("p");
+formulario.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-    if (cantidadInput.value <= 5) {
-        p_cantidad.style.color = "red";
+    const producto = productoInput.value;
+    const cantidad = cantidadInput.value;
+    const precio = precioInput.value;
+    const descripcion = descripcionInput.value;
+
+    try {
+        const respuesta = await fetch('/productos', {
+            method: 'POST',
+
+            headers: {
+                'Content-Type': 'application/json'
+            },
+
+            body: JSON.stringify({
+                producto,
+                cantidad,
+                precio,
+                descripcion
+            })
+        });
+
+        if (respuesta.ok) {
+            cargarProductos();
+        } else {
+            alert("Error al ingresar producto");
+        }
+    } catch (error) {
+        alert("Error del servidor");
     }
-
-    p_producto.textContent = productoInput.value;
-    p_cantidad.textContent = cantidadInput.value;
-    p_precio.textContent = precioInput.value;
-    p_descripcion.textContent = descripcionInput.value;
-    elemento.classList.add("elemento");
-
-    elemento.appendChild(p_producto);
-    elemento.appendChild(p_cantidad);
-    elemento.appendChild(p_precio);
-    elemento.appendChild(p_descripcion);
-    elementos.appendChild(elemento);
 });
 
 //Limpiar espacios
@@ -76,4 +121,38 @@ limpiarBtn.addEventListener("click", () => {
     cantidadInput.value = "";
     precioInput.value = "";
     descripcionInput.value = "";
+});
+
+//Borrar un elemento
+async function eliminarProducto(id) {
+    const respuesta = await fetch(`/productos/${id}`, {
+        method: "DELETE"
+    });
+
+    if (respuesta.ok) {
+        cargarProductos();
+    } else {
+        alert("Error al eliminar");
+    }
+}
+
+let id = 0;
+
+elementos.addEventListener("click", (e) => {
+    const producto = e.target.closest(".elemento");
+
+    if (!producto) return;
+
+    console.log(`Cliente seleccionado: ${producto.dataset.id}`);
+
+    id = producto.dataset.id;
+});
+
+borrar.addEventListener("click", () => {
+    if (!id) {
+        alert("Seleccione un producto");
+        return;
+    }
+
+    eliminarProducto(id);
 });
