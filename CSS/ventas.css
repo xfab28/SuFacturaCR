@@ -106,6 +106,20 @@ header img {
     flex-direction: column;
 }
 
+#form-ventas {
+    display: flex;
+    flex-direction: column;
+}
+
+.select-estado {
+    width: 35vh;
+    padding: 15px;
+    border: 2px solid #161616;
+    margin: 10px;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
 /*Animacion datos factura y calculo y otras cosas*/
 @keyframes aparicionIzquierda {
     from {
@@ -127,6 +141,7 @@ header img {
     animation: aparicionIzquierda .8s ease;
     margin-bottom: 2vh;
     box-shadow: 0px 5px 5px #314752;
+    overflow-y: auto;
 }
 
 .datos-factura h3 {
@@ -221,10 +236,9 @@ header img {
 .agregar-limpiar {
     display: flex;
     gap: 30px;
-    margin-top: 2vh;
     background-color: white;
     align-items: center;
-    height: 19vh;
+    height: 15vh;
     border-radius: 5px;
     box-shadow: 0px 5px 5px #314752;
     animation: aparicionIzquierda .8s ease;
@@ -428,6 +442,388 @@ header img {
     margin: 0;
 }
 
+/*Responsive laptop*/
+@media (max-width: 1920px) {
+    /*Header*/
+    header {
+        display: flex;
+        position: fixed;
+        z-index: 9999;
+        width: 100%;
+        background-color: white;
+        margin: 0;
+        top: 0;
+        animation: aparicionHeader .8s ease;
+    }
+
+    header img {
+        margin: 0;
+        width: 350px;
+        height: 50px;
+        padding: 15px;
+        cursor: pointer;
+    }
+
+    .cabecera {
+        display: flex;
+        font-size: 25px;
+        margin-top: 80px;
+        width: 100%;
+        animation: aparicionCabecera .8s ease;
+    }
+
+    .cabecera p {
+        margin-left: 3vh;
+        font-weight: bold;
+        color: white;
+    }
+
+    .usuario {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-right: 3rem;
+    }
+
+    #nombre-usuario {
+        font-size: 18px;
+    }
+
+    /*Contenido*/
+
+    .titulo-ventas {
+        margin: 10px;
+        box-shadow: 0px 5px 5px #314752;
+        width: 173vh;
+        padding: 15px;
+        border-radius: 5px;
+        background-color: white;
+        animation: aparicionTitulo .8s ease;
+    }
+
+    .ventanas {
+        display: flex;
+        margin: 10px;
+        border-radius: 5px;
+        margin-top: 2vh;
+    }
+
+    .ventas {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #form-ventas {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .select-estado {
+        width: 35vh;
+        padding: 15px;
+        border: 2px solid #161616;
+        margin: 10px;
+        font-size: 20px;
+        border-radius: 5px;
+    }
+
+    .datos-factura {
+        display: flex;
+        flex-direction: column;
+        width: 60vh;
+        padding: 15px;
+        border-radius: 5px;
+        background-color: white;
+        margin-bottom: 8px;
+        animation: aparicionIzquierda .8s ease;
+        margin-bottom: 2vh;
+        box-shadow: 0px 5px 5px #314752;
+        overflow-y: auto;
+    }
+
+    .datos-factura h3 {
+        font-size: 25px;
+        margin: 10px;
+        border-radius: 5px;
+    }
+
+    .cliente {
+        width: 45vh;
+        padding: 15px;
+        outline: none;
+        border: 2px solid #161616;
+        margin: 10px;
+        font-size: 20px;
+        border-radius: 5px;
+    }
+
+    .articulos {
+        display: flex;
+        flex-direction: column;
+        width: 60vh;
+        padding: 15px;
+        border-radius: 5px;
+        margin-bottom: 2vh;
+        background-color: white;
+        animation: aparicionIzquierda .8s ease;
+        box-shadow: 0px 5px 5px #314752;
+    }
+
+    .articulos h3 {
+        font-size: 25px;
+        margin: 10px;
+        border-radius: 5px;
+    }
+
+    .articulo {
+        width: 50vh;
+        padding: 15px;
+        outline: none;
+        border: 2px solid #161616;
+        margin: 10px;
+        font-size: 20px;
+        border-radius: 5px;
+    }
+
+    .cantidad {
+        width: 30vh;
+        padding: 15px;
+        outline: none;
+        border: 2px solid #161616;
+        margin: 10px;
+        font-size: 20px;
+        border-radius: 5px;
+    }
+
+    .precio {
+        width: 25vh;
+        padding: 15px;
+        outline: none;
+        border: 2px solid #161616;
+        margin: 10px;
+        font-size: 20px;
+        border-radius: 5px;
+    }
+
+    .descuento-exento {
+        display: flex;
+        gap: 8px;
+    }
+
+    .descuento {
+        width: 30vh;
+        padding: 15px;
+        outline: none;
+        border: 2px solid #161616;
+        margin: 10px;
+        font-size: 20px;
+        border-radius: 5px;
+    }
+
+    .exento {
+        width: 30vh;
+        padding: 15px;
+        outline: none;
+        border: 2px solid #161616;
+        margin: 10px;
+        font-size: 20px;
+        border-radius: 5px;
+    }
+
+    .agregar-limpiar {
+        display: flex;
+        gap: 30px;
+        background-color: white;
+        align-items: center;
+        height: 15vh;
+        border-radius: 5px;
+        box-shadow: 0px 5px 5px #314752;
+        animation: aparicionIzquierda .8s ease;
+    }
+
+    .btn-agregar {
+        border: none;
+        background-color: #4bccb7;
+        color: white;
+        font-size: 20px;
+        padding: 20px;
+        border-radius: 5px;
+        width: 10vh;
+        margin-left: 20px;
+    }
+
+    .btn-limpiar {
+        border: none;
+        background-color: #4bccb7;
+        color: white;
+        font-size: 20px;
+        padding: 20px;
+        border-radius: 5px;
+        width: 10vh; 
+    }
+
+    .lista-ventas {
+        box-shadow: 0px 5px 5px #314752;
+        margin-left: 15px;
+        border-radius: 5px;
+        width: 180vh;
+        height: 88vh;
+        overflow-y: auto;
+        background-color: white;
+        animation: aparacionDerecha .8s ease;
+    }
+
+    .lista-ventas h3{
+        font-size: 25px;
+        margin: 10px;
+        border-radius: 5px;
+    }
+
+    .descripcion {
+        display: flex;
+        gap: 5vh;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .productos {
+        display: flex;
+        border: 1px solid #bebcbc;
+        margin: 20px;
+        height: 50vh;
+        flex-direction: column;
+    }
+
+    .descripciones-de-productos {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        align-items: center;
+        width: 100%;
+        text-align: center;
+        gap: 20px;
+        border-bottom: 1px solid #bebcbc;
+    }
+
+    .datos-de-producto {
+        width: 100%;
+        overflow-y: auto;
+        height: 45vh;
+    }
+
+    .productos-insertados {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        align-items: center;
+        width: 100%;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .opciones {
+        display: flex;
+        margin: 10px;
+        box-shadow: 0px 5px 5px #314752;
+        border-radius: 5px;
+        padding: 15px;
+        height: 15vh;
+        align-items: center;
+        gap: 135vh;
+        background-color: white;
+        animation: aparacionAbajo .8s ease;
+    }
+
+    .input-opciones {
+        border: none;
+        background-color: #4bccb7;
+        color: white;
+        font-size: 20px;
+        padding: 20px;
+        border-radius: 5px;
+    }
+
+    .opciones-finales {
+        display: flex;
+        gap: 20px;
+    }
+
+    .calculos {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+        margin: 5px;
+    }
+
+    .descripciones-de-facturacion {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        text-align: center;
+        align-items: center;
+    }
+
+    .resultados-de-facturacion {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        column-gap: 5px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .datos-compras {
+        font-weight: bold;
+        border-top: 1px solid #161616;
+        padding: 15px;
+        font-size: 25px;
+    }
+
+    .radios {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+        border: 2px solid #161616;
+        border-radius: 5px;
+        width: 200px;
+        padding: 5px;
+        margin: 10px;
+    }
+
+    .ivas {
+        display: flex;
+    }
+
+    .iva {
+        width: 15vh;
+        padding: 15px;
+        border: 2px solid #161616;
+        border-radius: 5px;
+        font-size: 20px;
+        margin: 10px;
+        gap: 10px;
+        color: #bebcbc;
+    }
+
+    .cliente-info {
+        display: flex;
+        margin: 10px;
+        gap: 15px;
+    }
+
+    .cliente-info h4 {
+        font-size: 25px;
+        margin: 0;
+    }
+
+    .nombre-cliente {
+        padding: 0;
+        margin: 0;
+    }
+}
+
 /*Responsive Celular*/
 @media (max-width: 480px) {
 /*Header*/
@@ -612,7 +1008,7 @@ header img {
 
     .agregar-limpiar {
         display: flex;
-        width: 43vh;
+        width: 46vh;
         margin-top: 2vh;
         background-color: white;
         align-items: center;
@@ -712,7 +1108,7 @@ header img {
         margin: 10px;
         box-shadow: 0px 5px 5px #314752;
         border-radius: 5px;
-        padding: 15px;
+        padding: 20px;
         height: 15vh;
         align-items: center;
         gap: 5vh;
@@ -806,3 +1202,4 @@ header img {
         margin: 0;
     }
 }
+

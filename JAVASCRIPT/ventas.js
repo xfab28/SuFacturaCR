@@ -4,6 +4,7 @@ const cantidad = document.querySelector(".cantidad");
 const precio = document.querySelector(".precio");
 const descuento = document.querySelector(".descuento");
 const exento = document.querySelector(".exento");
+const select_estado = document.querySelector(".select-estado");
 
 const btnBuscarCliente = document.querySelector(".btn-buscar-cliente");
 const btnBuscarCodigo = document.querySelector(".btn-buscar-codigo");
@@ -27,11 +28,12 @@ const exentoCalculo = document.querySelector(".total-exento");
 const totalVentas = document.querySelector(".cant-total-ventas");
 
 const btnNuevaVenta = document.querySelector(".btn-nueva-venta");
-const btnSalir = document.querySelector(".btn-salir");
 
 const nombreCliente = document.querySelector(".nombre-cliente");
 
 const datos_de_producto = document.querySelector(".datos-de-producto");
+
+const form_ventas = document.getElementById("form-ventas");
 
 //Si no hay precio, descuento y exento, radios desactivados
 
@@ -65,6 +67,7 @@ let total_exe = 0;
 let total_iva13 = 0;
 let total_iva1 = 0;
 let total_iva2 = 0;
+let totalFactura = 0;
 
 //Ingresos JSON
 let totalJSON = 0
@@ -290,7 +293,6 @@ btnAgregar.addEventListener("click", () => {
     subTotal.innerHTML = "₡" + total_Subtotal;
 
     //Total
-    let totalFactura = 0;
     totalFactura = total_Subtotal + total_iva13 + total_iva1 + total_iva2 + total_exe;
     totalVentas.innerHTML = "₡" + totalFactura;
 
@@ -322,11 +324,6 @@ btnLimpiar.addEventListener("click", () => {
     imp13.style.color = "#bebcbc";
     imp1.style.color = "#bebcbc";
     imp2.style.color = "#bebcbc";
-});
-
-//Volver pagina de inicio
-btnSalir.addEventListener("click", () => {
-    window.location.href = "../HTML/inicio.html";
 });
 
 //Reiniciar todo
@@ -393,4 +390,43 @@ btnNuevaVenta.addEventListener("click", () => {
     }
 
     insertarIngresos(totalJSON);
+});
+
+//Guardar datos
+form_ventas.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const ahora = new Date();
+
+    const contacto = cliente.value;
+    const fecha = `${ahora.getDate()}/${ahora.getMonth() + 1}/${ahora.getFullYear()}`;
+    const descripcion = articulo.value;
+    const total = totalFactura;
+    const estado = select_estado.value;
+
+    try {
+        const respuesta = await fetch("/ventas", {
+            method: 'POST',
+
+            headers: {
+                'Content-Type': 'application/json'
+            },
+
+            body: JSON.stringify({
+                contacto: contacto,
+                fecha: fecha,
+                descripcion: descripcion,
+                monto: total,
+                estado: estado
+            })      
+        });
+
+        if (respuesta.ok) {
+            console.log("Se agrego la factura");
+        } else {
+            contacto.log("No se pudo agregar la factura");
+        }
+    } catch (error) {
+        console.log("Error del sistema");
+    }
 });

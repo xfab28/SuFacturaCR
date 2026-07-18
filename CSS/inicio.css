@@ -511,7 +511,7 @@ header img {
     }
 
     .titulo-sucursal-negocio {
-        display: flex;
+        display: none;
         flex-direction: column;
         gap: 10px;
         border-bottom: 1px solid #a8a8a8;
@@ -524,7 +524,7 @@ header img {
     }
 
     .titulo-terminal-negocio {
-        display: flex;
+        display: none;
         flex-direction: column;
         gap: 10px;
         border-bottom: 1px solid #a8a8a8;
@@ -545,6 +545,7 @@ header img {
         background-color: white;
         box-shadow: 0px 9px 10px #314752;
         flex-direction: column;
+        overflow-y: auto;
     }
 
     .propietario label {
@@ -584,7 +585,7 @@ header img {
     }
 
     .titulo-perfil-propietario {
-        display: flex;
+        display: none;
         flex-direction: column;
         gap: 10px;
         border-bottom: 1px solid #a8a8a8;
@@ -598,7 +599,7 @@ header img {
     }
 
     .titulo-plan-propietario {
-        display: flex;
+        display: none;
         flex-direction: column;
         gap: 10px;
         border-bottom: 1px solid #a8a8a8;

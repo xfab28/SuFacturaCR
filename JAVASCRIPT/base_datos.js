@@ -20,30 +20,6 @@ function crear_tablas() {
         )
     `);
     db.exec(`
-        CREATE TABLE IF NOT EXISTS facturas_aprobadas (
-            id              INTEGER PRIMARY KEY AUTOINCREMENT,
-            cliente         TEXT NOT NULL,
-            descripcion     TEXT NOT NULL,
-            tipo_iva        TEXT NOT NULL,
-            cant_impuestos  INTEGER,
-            monto           INTEGER,
-            fecha           TEXT NOT NULL,
-            hora            TEXT NOT NULL
-        )
-    `);
-    db.exec(`
-        CREATE TABLE IF NOT EXISTS facturas_temporales (
-            id              INTEGER PRIMARY KEY AUTOINCREMENT,
-            cliente         TEXT NOT NULL,
-            descripcion     TEXT NOT NULL,
-            tipo_iva        TEXT NOT NULL,
-            cant_impuestos  INTEGER,
-            monto           INTEGER,
-            fecha           TEXT NOT NULL,
-            hora            TEXT NOT NULL
-        )
-    `);
-    db.exec(`
         CREATE TABLE IF NOT EXISTS productos (
             id          INTEGER PRIMARY KEY AUTOINCREMENT,
             producto    TEXT NOT NULL,
@@ -60,6 +36,26 @@ function crear_tablas() {
             cedula   INTEGER,
             correo   TEXT NOT NULL,
             telefono INTEGER
+        )
+    `);
+    db.exec(`
+        CREATE TABLE IF NOT EXISTS facturas_ventas (
+            id            INTEGER PRIMARY KEY AUTOINCREMENT,
+            contacto      TEXT NOT NULL,
+            fecha         TEXT NOT NULL,
+            descripcion   TEXT NOT NULL,
+            monto         INTEGER,
+            estado        TEXT NOT NULL
+        )
+    `);
+    db.exec(`
+        CREATE TABLE IF NOT EXISTS facturas_compras (
+            id            INTEGER PRIMARY KEY AUTOINCREMENT,
+            contacto      TEXT NOT NULL,
+            fecha         TEXT NOT NULL,
+            descripcion   TEXT NOT NULL,
+            monto         INTEGER,
+            estado        TEXT NOT NULL
         )
     `);
 
@@ -94,6 +90,26 @@ function insertarClientes(contacto, empresa, cedula, correo, telefono) {
     insertar.run(contacto, empresa, cedula, correo, telefono);
 }
 
+function insertarVentas(contacto, fecha, descripcion, monto, estado) {
+    const db = conectar();
+    const insertar = db.prepare(`
+        INSERT INTO facturas_ventas (contacto, fecha, descripcion, monto, estado)
+        VALUES (?, ?, ?, ?, ?)
+    `);
+    insertar.run(contacto, fecha, descripcion, monto, estado);
+}
+
+function insertarCompras(contacto, fecha, descripcion, monto, estado) {
+    const db = conectar();
+    const insertar = db.prepare(`
+        INSERT INTO facturas_compras (contacto, fecha, descripcion, monto, estado)
+        VALUES (?, ?, ?, ?, ?)
+    `);
+    insertar.run(contacto, fecha, descripcion, monto, estado);
+}
+
+//Borrar datos
+
 function borrarTodo() {
     const db = conectar();
     db.exec(`
@@ -115,6 +131,24 @@ function obtenerClientes() {
     const db = conectar();
     const consulta = db.prepare(`
         SELECT * FROM clientes
+    `);
+
+    return consulta.all();
+}
+
+function obtenerVentas() {
+    const db = conectar();
+    const consulta = db.prepare(`
+        SELECT * FROM facturas_ventas
+    `);
+
+    return consulta.all();
+}
+
+function obtenerCompras() {
+    const db = conectar();
+    const consulta = db.prepare(`
+        SELECT * FROM facturas_compras
     `);
 
     return consulta.all();
@@ -147,5 +181,9 @@ module.exports = {
     obtenerProductos,
     obtenerClientes,
     eliminarProducto,
-    eliminarCliente
+    eliminarCliente,
+    insertarVentas,
+    insertarCompras,
+    obtenerVentas,
+    obtenerCompras
 };

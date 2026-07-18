@@ -159,8 +159,14 @@
 
                             <h3>Datos de la factura</h3>
 
-                            <input type="text" placeholder="Cliente" class="cliente">
-                            <input type="text" placeholder="Descripción" class="desc-compra">
+                            <form action="/compras" method="post" id="form-compras">
+                                <input type="text" placeholder="Cliente" class="cliente">
+                                <input type="text" placeholder="Descripción" class="desc-compra">
+                                <select class="select-estado">
+                                    <option value="Pagado">Pagado</option>
+                                    <option value="Pendiente">Pendiente</option>
+                                </select>
+                            </form>
 
                         </div>
 
@@ -255,7 +261,7 @@
 
                     <div class="opciones-finales">
                         <input type="submit" value="Totalizar" class="input-opciones btn-totalizar">
-                        <input type="submit" value="Salir" class="input-opciones btn-salir">
+                        <input type="submit" value="Guardar" class="input-opciones btn-guardar" form="form-compras">
                     </div>
 
                 </div>

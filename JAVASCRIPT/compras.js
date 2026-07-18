@@ -4,6 +4,7 @@ const cantidad = document.querySelector('.cantidad');
 const precio = document.querySelector('.precio');
 const descuento = document.querySelector('.descuento');
 const exento = document.querySelector('.exento');
+const select_estado = document.querySelector('.select-estado');
 
 const iva13 = document.querySelector('.iva13');
 const iva1 = document.querySelector('.iva1');
@@ -29,7 +30,8 @@ const total_exento = document.querySelector('.total-exento');
 const cant_total_compras = document.querySelector('.cant-total-compras');
 
 const btn_nueva_venta = document.querySelector('.btn-nueva-venta');
-const btn_salir = document.querySelector('.btn-salir');
+
+const form_compras = document.getElementById('form-compras');
 
 //Impresion de ivas
 let esIVA13 = false;
@@ -45,6 +47,7 @@ let total_exe = 0;
 let total_iva13 = 0;
 let total_iva1 = 0;
 let total_iva2 = 0;
+let totalFactura = 0;
 
 //Compras JSON
 let totalJSON = 0
@@ -269,7 +272,6 @@ btn_agregar.addEventListener("click", () => {
     total_exento.textContent = "₡" + total_exe;
 
     //Total
-    let totalFactura = 0;
     totalFactura = total_Subtotal + total_iva13 + total_iva1 + total_iva2 + total_exe;
     cant_total_compras.textContent = "₡" + totalFactura;
 });
@@ -302,6 +304,40 @@ btn_limpiar.addEventListener("click", () => {
 //Nueva venta
 
 //Ir a inicio
-btn_salir.addEventListener("click", () => {
-    window.location.href = "../HTML/inicio.html";
+form_compras.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const ahora = new Date();
+
+    const contacto = cliente.value;
+    const fecha = `${ahora.getDate()}/${ahora.getMonth() + 1}/${ahora.getFullYear()}`;
+    const descripcion = desc_compra.value;
+    const monto = totalFactura;
+    const estado = select_estado.value;
+
+    try {
+        const respuesta = await fetch("/compras", {
+            method: 'POST',
+
+            headers: {
+                'Content-Type': 'application/json'
+            },
+
+            body: JSON.stringify({
+                contacto: contacto,
+                fecha: fecha,
+                descripcion: descripcion,
+                monto: monto,
+                estado: estado
+            })
+        });
+
+        if (respuesta.ok) {
+            console.log("Se agrego la compra");
+        } else {
+            console.log("No se agrego la compra");
+        }
+    } catch (error) {
+        console.log("Error del servidor");
+    }
 });

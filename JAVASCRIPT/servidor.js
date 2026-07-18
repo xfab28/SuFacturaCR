@@ -46,6 +46,30 @@ app.post('/contactos', (req, res) => {
     res.send('Guardado');
 });
 
+app.post('/ventas', (req, res) => {
+    const contacto = req.body.contacto;
+    const fecha = req.body.fecha;
+    const descripcion = req.body.descripcion;
+    const monto = req.body.monto;
+    const estado = req.body.estado;
+
+    base_datos.insertarVentas(contacto, fecha, descripcion, monto, estado);
+
+    res.send('Guardado');
+});
+
+app.post('/compras', (req, res) => {
+    const contacto = req.body.contacto;
+    const fecha = req.body.fecha;
+    const descripcion = req.body.descripcion;
+    const monto = req.body.monto;
+    const estado = req.body.estado;
+
+    base_datos.insertarCompras(contacto, fecha, descripcion, monto, estado);
+
+    res.send('Guardado');
+});
+
 //Pedir datos
 app.get("/productos", (req, res) => {
     const productos = base_datos.obtenerProductos();
@@ -57,6 +81,18 @@ app.get("/contactos", (req, res) => {
     const contactos = base_datos.obtenerClientes();
 
     res.json(contactos);
+});
+
+app.get("/ventas", (req, res) => {
+    const ventas = base_datos.obtenerVentas();
+
+    res.json(ventas);
+});
+
+app.get("/compras", (req, res) => {
+    const compras = base_datos.obtenerCompras();
+
+    res.json(compras);
 });
 
 //Eliminar datos

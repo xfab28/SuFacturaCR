@@ -473,6 +473,20 @@ header img {
     border-radius: 5px;
 }
 
+#form-compras {
+    display: flex;
+    flex-direction: column;
+}
+
+.select-estado {
+    width: 35vh;
+    padding: 15px;
+    border: 2px solid #161616;
+    margin: 10px;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
 .cliente {
     width: 45vh;
     padding: 15px;
@@ -588,7 +602,7 @@ header img {
     gap: 30px;
     background-color: white;
     align-items: center;
-    height: 20vh;
+    height: 15vh;
     border-radius: 5px;
     box-shadow: 0px 5px 5px #314752;
     animation: aparicionIzquierda .8s ease;
@@ -777,6 +791,721 @@ header img {
     border-radius: 5px;
 }
 
+/*Responsive laptop*/
+
+@media (max-width: 1920px) {
+    /*Header*/
+    header {
+        display: flex;
+        position: fixed;
+        z-index: 9999;
+        width: 100%;
+        background-color: white;
+        animation: aparicionHeader .8s ease;
+    }
+
+    header img {
+        margin: 0;
+        width: 350px;
+        height: 50px;
+        padding: 15px;
+        cursor: pointer;
+    }
+
+    .usuario {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-right: 3rem;
+    }
+
+    #nombre-usuario {
+        font-size: 18px;
+    }
+
+    /*Contenido*/
+    .contenido {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    /*Cabecera*/
+
+    .cabecera {
+        display: flex;
+        font-size: 25px;
+        margin-top: 80px;
+        width: 100%;
+        animation: aparicionCabecera .8s ease;
+    }
+
+    .cabecera p {
+        margin-left: 3vh;
+        font-weight: bold;
+        color: white;
+    }
+
+    /*Secciones*/
+
+    .secciones {
+        display: flex;
+        gap: 3vh;
+        margin-top: 2vh;
+        font-size: 20px;
+        padding: 10px;
+        border-radius: 10px;
+        font-weight: bold;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        background-color: white;
+        z-index: 0;
+        animation: aparicionSeccion .8s ease;
+    }
+
+    .seleccion-articulos .articulos-slash {
+        border-radius: 10px;
+        color: white;
+        cursor: pointer;
+        z-index: 1;
+        transition: color .3s ease;
+    }
+
+    .seleccion-articulos .compras-slash {
+        border-radius: 10px;
+        color: #000000;
+        cursor: pointer;
+        animation: color .8s ease;
+        z-index: 1;
+        transition: color .3s ease;
+    }
+
+    .seleccion-articulos .seleccion-actual {
+        position: absolute;
+        background-color: #4bccb7;
+        width: 116.26px;
+        height: 45px;
+        border-radius: 10px;
+        left: 0;
+        z-index: 1;
+        transition: left .8s ease;
+    }
+
+    .seleccion-compras .articulos-slash {
+        cursor: pointer;
+        border-radius: 10px;
+        color: #000000;
+        z-index: 1;
+        transition: color .3s ease;
+    }
+
+    .seleccion-compras .compras-slash {
+        color: white;
+        border-radius: 10px;
+        cursor: pointer;
+        animation: color .8s ease;
+        z-index: 1;
+        transition: color .3s ease;
+    }
+
+    .seleccion-compras .seleccion-actual {
+        position: absolute;
+        background-color: #4bccb7;
+        width: 116.26px;
+        height: 45px;
+        border-radius: 10px;
+        left: 11vh;
+        z-index: 1;
+        transition: left .8s ease;
+    }
+
+    .barra-separadora {
+        display: flex;
+        width: 95%;
+        padding: 1px;
+        background-color: white;
+        margin: 3vh;
+    }
+
+    /*Articulos*/
+
+    /*JS*/
+
+    .articulos-cuadro .barra-agregar {
+        display: flex;
+    }
+
+    .articulos-cuadro .articulos-lista {
+        display: flex;
+    }
+
+    .articulos-cuadro .compras-emicion {
+        display: none;
+    }
+
+    .compras-info .barra-agregar {
+        display: none;
+    }
+
+    .compras-info .articulos-lista {
+        display: none;
+    }
+
+    .compras-info .content-compras {
+        display: flex;
+    }
+
+    .content {
+        display: flex; /*Cambiarrr*/
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .articulos-lista {
+        display: flex;
+        gap: 3vh;
+        width: 55%;
+        position: relative;
+        box-shadow: 0px 5px 5px #314752;
+        animation: aparicion .8s ease;
+        z-index: 2;
+        margin-bottom: 5vh;
+    }
+
+    .articulos-header {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #405ADD;
+        height: 68.6vh;
+    }
+
+    .articulos-header .agregar {
+        color: white;
+        background-color: #49c92a;
+        border-radius: 10px;
+        width: 40px;
+        height: 45px;
+        font-size: 30px;
+        border: none;
+        transition: 0.5s;
+        border: 2px solid white;
+    }
+
+    .articulos-header .agregar:active {
+        transform: scale(0.9);
+    }
+
+    .articulos-header .borrar {
+        border: none;
+        background-color: red;
+        width: 20px;
+        height: 25px;
+        padding: 10px;
+        border-radius: 10px;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.5s;
+        border: 2px solid white;
+    }
+
+    .articulos-header .borrar:active {
+        transform: scale(0.9);
+    }
+
+    .articulos-elemento {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        background-color: #405ADD;
+    }
+
+    .detalles-articulo {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        width: 100%;
+        text-align: center;
+        align-items: center;
+    }
+
+    .detalles-articulo p {
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+    }
+
+    .elementos {
+        background-color: white;
+        width: 100%;
+        height: 66vh;
+    }
+
+    .elemento {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        width: 100%;
+        text-align: center;
+        align-items: center;
+    }
+
+    .elemento p {
+        font-size: 20px;
+    }
+
+    /*Barra de agregar*/
+
+
+    .barra-ocultar .barra-agregar {
+        display: none;
+    }
+
+    .barra-agregar-oculta .barra-agregar {
+        left: 80vh;
+    }
+
+    .barra-agregar {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        height: 68vh;
+        background-color: #405ADD;
+        margin-right: 2vh;
+        box-shadow: 0px 5px 5px #314752;
+        padding: 15px;
+        position: absolute;
+        z-index: 1;
+        left: 6vh;
+        width: 30vh;
+        transition: left .8s ease;
+        margin-bottom: 5vh;
+    }
+
+    .barra-agregar form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .barra-agregar h3 {
+        font-size: 25px;
+        color: white;
+    }
+
+    .barra-agregar input {
+        margin: 5px;
+        border-radius: 5px;
+    }
+
+    .barra-agregar .producto-input, .cantidad-input, .precio-input {
+        border: 2px solid white;
+        padding: 15px;
+        outline: none;
+        font-size: 14px;
+    }
+
+    .barra-agregar textarea {
+        border: 2px solid white;
+        padding: 15px;
+        font-family: Arial, Helvetica, sans-serif;
+        outline: none;
+        border-radius: 5px;
+        font-size: 15px;
+        margin: 5px;
+    }
+
+    .cantidad-precio {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .agregar-btn {
+        background-color: #49c92a;
+        border: none;
+        font-size: 20px;
+        color: white;
+        padding: 15px;
+        font-weight: bold;
+        border-radius: 5px;
+        transition: 0.5s;
+    }
+
+    .agregar-btn:active {
+        transform: scale(0.9);
+    }
+
+    .limpiar-btn {
+        background-color: #4bccb7;
+        border: none;
+        font-size: 20px;
+        padding: 15px;
+        font-weight: bold;
+        border-radius: 5px;
+        transition: 0.5s;
+        color: white;
+    }
+
+    .limpiar-btn:active {
+        transform: scale(0.9);
+    }
+
+    /*Sección de compras*/
+
+    .content-compras {
+        display: none;
+        width: 95%;
+        flex-direction: column;
+    }
+
+    .titulo-compras {
+        box-shadow: 0px 5px 5px #314752;
+        width: 99%;
+        padding: 15px;
+        border-radius: 5px;
+        background-color: white;
+        animation: aparicionTitulo .8s ease;
+    }
+
+    .ventanas-compras {
+        display: flex;
+        border-radius: 5px;
+    }
+
+    .compras-contenedor {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .datos-factura {
+        display: flex;
+        flex-direction: column;
+        width: 60vh;
+        box-shadow: 0px 5px 5px #314752;
+        padding: 15px;
+        border-radius: 5px;
+        background-color: white;
+        animation: aparicionIzquierda .8s ease;
+        margin-bottom: 2vh;
+    }
+
+    .datos-factura h3 {
+        font-size: 25px;
+        margin: 10px;
+        border-radius: 5px;
+    }
+
+    #form-compras {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .select-estado {
+        width: 35vh;
+        padding: 15px;
+        border: 2px solid #161616;
+        margin: 10px;
+        font-size: 20px;
+        border-radius: 5px;
+    }
+
+    .cliente {
+        width: 45vh;
+        padding: 15px;
+        outline: none;
+        border: 2px solid #161616;
+        margin: 10px;
+        font-size: 20px;
+        border-radius: 5px;
+    }
+
+    .desc-compra {
+        width: 50vh;
+        padding: 15px;
+        outline: none;
+        border: 2px solid #161616;
+        margin: 10px;
+        font-size: 20px;
+        border-radius: 5px;
+    }
+
+    .articulos-compra {
+        display: flex;
+        flex-direction: column;
+        width: 60vh;
+        box-shadow: 0px 5px 5px #314752;
+        padding: 15px;
+        border-radius: 5px;
+        margin-bottom: 2vh;
+        background-color: white;
+        animation: aparicionIzquierda .8s ease;
+    }
+
+    .articulos-compra h3 {
+        font-size: 25px;
+        margin: 10px;
+        border-radius: 5px;
+    }
+
+    .cantidad {
+        width: 30vh;
+        padding: 15px;
+        outline: none;
+        border: 2px solid #161616;
+        margin: 10px;
+        font-size: 20px;
+        border-radius: 5px;
+    }
+
+    .precio {
+        width: 25vh;
+        padding: 15px;
+        outline: none;
+        border: 2px solid #161616;
+        margin: 10px;
+        font-size: 20px;
+        border-radius: 5px;
+    }
+
+    .descuento-exento {
+        display: flex;
+        gap: 8px;
+    }
+
+    .descuento {
+        width: 30vh;
+        padding: 15px;
+        outline: none;
+        border: 2px solid #161616;
+        margin: 10px;
+        font-size: 20px;
+        border-radius: 5px;
+    }
+
+    .exento {
+        width: 30vh;
+        padding: 15px;
+        outline: none;
+        border: 2px solid #161616;
+        margin: 10px;
+        font-size: 20px;
+        border-radius: 5px;
+    }
+
+    .radios {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+        border: 2px solid #161616;
+        border-radius: 5px;
+        width: 200px;
+        padding: 5px;
+        margin: 10px;
+    }
+
+    .ivas {
+        display: flex;
+    }
+
+    .iva {
+        width: 15vh;
+        padding: 15px;
+        border: 2px solid #161616;
+        border-radius: 5px;
+        font-size: 20px;
+        margin: 10px;
+        gap: 10px;
+        color: #bebcbc;
+    }
+
+    .agregar-limpiar {
+        display: flex;
+        gap: 30px;
+        background-color: white;
+        align-items: center;
+        height: 15vh;
+        border-radius: 5px;
+        box-shadow: 0px 5px 5px #314752;
+        animation: aparicionIzquierda .8s ease;
+    }
+
+    .btn-agregar {
+        border: none;
+        background-color: #4bccb7;
+        color: white;
+        font-size: 20px;
+        padding: 20px;
+        border-radius: 5px;
+        width: 10vh;
+        margin-left: 20px;
+    }
+
+    .btn-limpiar {
+        border: none;
+        background-color: #4bccb7;
+        color: white;
+        font-size: 20px;
+        padding: 20px;
+        border-radius: 5px;
+        width: 10vh; 
+    }
+
+    .lista-compras {
+        box-shadow: 0px 5px 5px #314752;
+        margin-left: 15px;
+        border-radius: 5px;
+        width: 170vh;
+        height: 82vh;
+        overflow-y: auto;
+        background-color: white;
+        animation: aparacionDerecha .8s ease;
+    }
+
+    .lista-compras h3{
+        font-size: 25px;
+        margin: 10px;
+        border-radius: 5px;
+    }
+
+    .cliente-info {
+        display: flex;
+        margin: 10px;
+        gap: 15px;
+    }
+
+    .cliente-info h4 {
+        font-size: 25px;
+        margin: 0;
+    }
+
+    .nombre-cliente {
+        padding: 0;
+        margin: 0;
+    }
+
+    .productos {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border: 1px solid #bebcbc;
+        margin: 20px;
+    }
+
+    .descripciones-compras {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 20px;
+        width: 100%;
+        text-align: center;
+        align-items: center;
+        border-bottom: 1px solid #bebcbc;
+    }
+
+    .descripciones-compras h4 {
+        font-size: 18px;
+    }
+
+    .registro-compras {
+        width: 100%;
+        height: 45vh;
+        overflow-y: auto;
+    }
+
+    .informacion-compras {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 40px;
+        text-align: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .calculos {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+        margin: 5px;
+    }
+
+    .tipo-dato {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        column-gap: 5px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .resultados-compras {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        column-gap: 5px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .datos-compras {
+        font-weight: bold;
+        border-top: 1px solid #161616;
+        padding: 15px;
+        font-size: 25px;
+    }
+
+    .opciones {
+        display: flex;
+        box-shadow: 0px 5px 5px #314752;
+        border-radius: 5px;
+        padding: 15px;
+        height: 15vh;
+        align-items: center;
+        background-color: white;
+        animation: aparacionAbajo .8s ease;
+        margin-top: 15px;
+        position: relative;
+    }
+
+    .btn-nueva-venta {
+        position: absolute;
+        left: 20px;
+        border: none;
+        background-color: #4bccb7;
+        color: white;
+        font-size: 20px;
+        padding: 20px;
+        border-radius: 5px;
+    }
+
+    .opciones-finales {
+        display: flex;
+        gap: 15px;
+        position: absolute;
+        right: 20px;
+    }
+
+    .opciones-finales input {
+        border: none;
+        background-color: #4bccb7;
+        color: white;
+        font-size: 20px;
+        padding: 20px;
+        border-radius: 5px;
+    } 
+}
+
 @media (max-width: 480px) {
 /*Header*/
     header {
@@ -909,7 +1638,7 @@ header img {
         width: 116.26px;
         height: 45px;
         border-radius: 10px;
-        left: 12vh;
+        left: 12.5vh;
         z-index: 1;
         transition: left .8s ease;
     }
@@ -1279,7 +2008,7 @@ header img {
 
     .agregar-limpiar {
         display: flex;
-        width: 41vh;
+        width: 44vh;
         margin-top: 2vh;
         background-color: white;
         align-items: center;
@@ -1380,7 +2109,7 @@ header img {
         box-shadow: 0px 5px 5px #314752;
         border-radius: 5px;
         padding: 15px;
-        height: 15vh;
+        height: 17vh;
         align-items: center;
         gap: 5vh;
         background-color: white;
