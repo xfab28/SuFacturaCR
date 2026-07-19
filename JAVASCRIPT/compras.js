@@ -1,3 +1,13 @@
+import { 
+    abrirBaseDatos,
+    guardarCompras,
+    vaciarCompras 
+} from "./indexedDB";
+
+await abrirBaseDatos();
+
+import { conectado } from "./internet";
+
 const cliente = document.querySelector('.cliente');
 const desc_compra = document.querySelector('.desc-compra');
 const cantidad = document.querySelector('.cantidad');
@@ -316,28 +326,33 @@ form_compras.addEventListener("submit", async (e) => {
     const estado = select_estado.value;
 
     try {
-        const respuesta = await fetch("/compras", {
-            method: 'POST',
+        if (conectado) {
+            const respuesta = await fetch("/compras", {
+                method: 'POST',
 
-            headers: {
-                'Content-Type': 'application/json'
-            },
+                headers: {
+                    'Content-Type': 'application/json'
+                },
 
-            body: JSON.stringify({
-                contacto: contacto,
-                fecha: fecha,
-                descripcion: descripcion,
-                monto: monto,
-                estado: estado
-            })
-        });
+                body: JSON.stringify({
+                    contacto: contacto,
+                    fecha: fecha,
+                    descripcion: descripcion,
+                    monto: monto,
+                    estado: estado
+                })
+            });
 
-        if (respuesta.ok) {
-            console.log("Se agrego la compra");
+            if (respuesta.ok) {
+                console.log("Se agrego la compra");
+            } 
         } else {
-            console.log("No se agrego la compra");
+            console.log("Guardando datos localmente");
+            await guardarCompras(contacto, fecha, descripcion, monto, estado); 
         }
+
     } catch (error) {
-        console.log("Error del servidor");
+        console.log("Guardando datos localmente");
+        await guardarCompras(contacto, fecha, descripcion, monto, estado);
     }
 });

@@ -1,3 +1,13 @@
+import { 
+    abrirBaseDatos,
+    guardarVentas,
+    vaciarVentas
+} from "./indexedDB.js";
+
+await abrirBaseDatos();
+
+import { conectado } from "./internet.js";
+
 const cliente = document.querySelector(".cliente");
 const articulo = document.querySelector(".articulo");
 const cantidad = document.querySelector(".cantidad");
@@ -405,28 +415,32 @@ form_ventas.addEventListener("submit", async (e) => {
     const estado = select_estado.value;
 
     try {
-        const respuesta = await fetch("/ventas", {
-            method: 'POST',
+        if (conectado) {
+            const respuesta = await fetch("/ventas", {
+                method: 'POST',
 
-            headers: {
-                'Content-Type': 'application/json'
-            },
+                headers: {
+                    'Content-Type': 'application/json'
+                },
 
-            body: JSON.stringify({
-                contacto: contacto,
-                fecha: fecha,
-                descripcion: descripcion,
-                monto: total,
-                estado: estado
-            })      
-        });
+                body: JSON.stringify({
+                    contacto: contacto,
+                    fecha: fecha,
+                    descripcion: descripcion,
+                    monto: total,
+                    estado: estado
+                })      
+            });
 
-        if (respuesta.ok) {
-            console.log("Se agrego la factura");
+            if (respuesta.ok) {
+                console.log("Se agrego la factura");
+            } 
         } else {
-            contacto.log("No se pudo agregar la factura");
+            console.log("Guardando localmente");
+            await guardarVentas(contacto, fecha, descripcion, total, estado);     
         }
     } catch (error) {
-        console.log("Error del sistema");
+        console.log("Guardando localmente");
+        await guardarVentas(contacto, fecha, descripcion, total, estado);
     }
 });
