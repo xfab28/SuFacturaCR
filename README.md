@@ -1,8 +1,7 @@
 # Mi proyecto - SuFácturaCR
 
-Este proyecto esta basado en un sistema de facturación con múltiples funciones como el de emitir y guardar facturas en formato pdf.
-También para tener registro de tus ingresos y compras. El proyecto sigue en desarrollo, esto por así decirlo es para que se tenga acceso a un vistazo
-de los avances logrados.
+Este proyecto esta basado en un sistema de facturación que emula múltiples funciones como el de emitir y guardar facturas en formato pdf.
+También para tener registro de tus ingresos y compras.
 
 ## Cómo usarlo
 
