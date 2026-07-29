@@ -12,6 +12,8 @@ await abrirBaseDatos();
 
 import { conectado } from "./internet.js";
 
+import { mensaje } from "./mensaje.js";
+
 //Sincronizar datos
 async function sincronizarDatos() {
     const ventas = await obtenerVentas();
@@ -56,14 +58,6 @@ async function sincronizarDatos() {
     await vaciarVentas();
     await vaciarCompras();
 };
-
-//Sincronizar datos cuando vuelva internet
-window.addEventListener("online", () => {
-    alert("La conexion ha vuelto");
-    sincronizarDatos();
-});
-
-
 
 const select_filtrado = document.querySelector(".select-filtrado");
 
@@ -164,16 +158,22 @@ async function comprasIndexed() {
 
 
 function cargarDatos() {
-    if (conectado) {
-        cargarVentas();
-        cargarCompras();
-    } else {
-        ventasIndexed();
-        comprasIndexed();
-    }
+    cargarVentas();
+    cargarCompras();
 }
 
 cargarDatos();
+
+//Sincronizar datos cuando vuelva internet
+window.addEventListener("online", () => {
+    cargarDatos();
+    sincronizarDatos();
+});
+
+window.addEventListener("offline", () => {
+    ventasIndexed();
+    comprasIndexed();
+});
 
 //Filtrar por opcion
 select_filtrado.addEventListener("change", () => {

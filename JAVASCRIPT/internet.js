@@ -1,13 +1,13 @@
+import { mensaje } from "./mensaje.js";
+
 export let conectado = true;
 
 window.addEventListener("offline", () => {
-    console.log("Se fue la conexion");
+    mensaje("Se fue la conexión a internet, tus datos se guardaran localmente");
     conectado = false;
-    console.log(conectado);
 });
 
 window.addEventListener("online", () => {
-    console.log("Ya volvio la conexion");
+    mensaje("Ya volvio la conexión a internet");
     conectado = true;
-    console.log(conectado);
 });

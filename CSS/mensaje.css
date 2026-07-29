@@ -1,0 +1,47 @@
+@keyframes aparicion {
+    from {
+        top: 0;
+    }
+    to {
+        top: 10vh;
+    }
+}
+
+@keyframes desaparicion {
+    from {
+        top: 10vh;
+        opacity: 1;
+    }
+    to {
+        top: 0;
+        opacity: 0;
+    }
+}
+
+
+.desaparecer {
+    animation: desaparicion .8s ease forwards;
+}
+
+.mensaje-internet {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 9998;
+    top: 10vh;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    animation: aparicion .8s ease;
+}
+
+.mensaje-internet p {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #3bbb00;
+    padding: 15px;
+    box-shadow: 0px 0px 20px #717171;
+    width: 50vh;
+    text-align: center;
+}
